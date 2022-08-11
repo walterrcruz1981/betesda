@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { GoSearch } from 'react-icons/go'
 import { RiCloseLine } from 'react-icons/ri'
-
+import Image from 'next/image'
 
 const liveUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8br10Qoo5bZvTKiJhPkdOA&eventType=live&order=date&type=video&key=';
 const initialUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8br10Qoo5bZvTKiJhPkdOA&order=date&maxResults=20&key=';
@@ -34,10 +34,6 @@ function Sermones({ data, apikey }) {
         setVideos(result)
     }
 
-    useEffect(() => {
-        setVideos(data)
-    }, [])
-
     const handleClick = async () => {
         await searchResult(searchQuery)
         setSearchQuery('')
@@ -61,7 +57,7 @@ function Sermones({ data, apikey }) {
             <div className="main-content">
 
                 <div className="latest-sermon">
-                    {videos.items?.map((video, index) => {
+                    {data.items?.map((video, index) => {
                         const { id, snippet = {} } = video
                         const { title } = snippet
                         return (
@@ -69,7 +65,6 @@ function Sermones({ data, apikey }) {
                                 title={title}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen>
-
                             </iframe> : ''
                         )
                     })}
@@ -77,13 +72,13 @@ function Sermones({ data, apikey }) {
                 <div className="search-results-container">
                     <h2 className='cards-title primary-color'>{resultTitle}</h2>
                     <div className="video-cards primary-color">
-                        {videos.items?.map((video, index) => {
+                        {data.items?.map((video, index) => {
                             const { snippet = {} } = video
                             const { title, thumbnails = {} } = snippet
-                            const { high: image } = thumbnails
+                            const { medium: image } = thumbnails
                             return (
                                 <div key={index} onClick={() => setActiveVideo(index)} className={activeVideo === index ? "video-card active-video" : 'video-card'}>
-                                    <img src={image.url} alt="" />
+                                    <div className='image-container'><Image layout='fill' src={image.url} alt="video image" /></div>
                                     <h4>{title}</h4>
                                 </div>
                             )
@@ -156,14 +151,7 @@ const SermonesContainer = styled.div`
             transform: scale(1.1);
         }
     }
-    img {
-        width: 100%;
-        height:100%;
-        position: absolute;
-        top: 0;
-        object-fit: cover;
-        z-index: -1;
-    }
+
     .description {
         position: absolute;
         bottom: 4em;
@@ -196,11 +184,14 @@ const SermonesContainer = styled.div`
         &:hover {
                background-color: #00000029;
             }
-        img {
+        .image-container {
+            flex: 1;
             max-width: 10em;
             height: 5em;
+            position: relative;
         }
         h4 {
+            flex: 2;
             padding-left:.7em;
             color: black;
             font-size: .9rem;

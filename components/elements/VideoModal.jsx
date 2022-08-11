@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
+import Image from 'next/image'
 
 function VideoModal() {
 
@@ -12,7 +13,7 @@ function VideoModal() {
     }
     return (<>
         <HeroModal className='flex-center-column'>
-            <img src='https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt='hero'></img>
+            <Image layout='fill' src='https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt='hero' />
             <h1 className='title text-shadow'>Bienvenidos a<br></br> Ministerios Betesda</h1>
             <button className='open' onClick={() => setShowModal(!showModal)
             }>Ver Video</button>

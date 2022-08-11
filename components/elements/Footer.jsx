@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <FooterContainer className='flex-center'>
             <div className='logo'>
-                <Image src={logo} />
+                <Image src={logo} alt='logo' />
             </div>
             <div className='nav-links flex-center'>
                 {navLinks.map((link, key) => (

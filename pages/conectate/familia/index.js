@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import Image from 'next/image'
 
 function Familia() {
     return (
         <FamiliaContainer>
             <div className='hero flex-center'>
                 <h1 className='text-shadow'>Familia</h1>
-                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
+                <Image layout='fill' src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="familia picture" />
             </div>
             <div className="intro primary-color">
                 <h1>QUIEN SOMOS</h1>

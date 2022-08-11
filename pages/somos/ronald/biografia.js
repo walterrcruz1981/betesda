@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { biography } from '../../../public/assets/ronaldContent';
+import { biography } from '../../../public/assets/page-content/ronaldContent';
 
 function Biografia() {
     return (

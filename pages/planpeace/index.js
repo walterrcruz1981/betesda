@@ -26,7 +26,7 @@ function PeacePlan({ video }) {
   return (
     <PeacePlanContainer>
       <div className="banner">
-        <Image height='1000' src={banner}></Image>
+        <Image height='1000' src={banner} alt='plan peace'></Image>
       </div>
       <div className="button-container flex-center">
         <Link href='#cinco-gigantes'><a>5 gigantes</a></Link>

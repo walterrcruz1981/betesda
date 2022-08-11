@@ -1,5 +1,5 @@
-import image1 from '../../public/assets/pastor.png'
-import image2 from '../../public/assets/pastor2.png'
+import image1 from '../images/pastor.png'
+import image2 from '../images/pastor2.png'
 export const biography = {
     title: 'Ronald Vides',
     description: <p>El siervo de Dios que hasta la fecha está pastoreando Ministerios Betesda, nació en la ciudad de Santa Ana, en la Republica de El Salvador, Centro América el 3 de febrero del año 1969. Es el segundo hijo de Ricardo Alberto Vides y de Telma Barrera. Vivió en El Salvador 21 años, en donde estudio hasta los estudios Universitarios.

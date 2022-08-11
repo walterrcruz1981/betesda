@@ -1,45 +1,41 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import Image from 'next/image'
+import Script from 'next/script'
 
 function Eventos() {
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://public.tockify.com/browser/embed.js";
-        document.body.appendChild(script);
-    }, [])
     return (
         <EventosContainer>
             <div className='hero-section flex-center'>
-                <img src="https://images.unsplash.com/photo-1602669255503-8166f04d1a76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
+                <div className='image-container'>
+                    <Image layout='fill' objectFit='cover' src="https://images.unsplash.com/photo-1602669255503-8166f04d1a76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="eventos" />
+                </div>
                 <div className="text-content">
                     <h3 className='text-shadow'>Eventos</h3>
                     <p className='text-shadow'></p>
                 </div>
             </div>
             <div className="calendar">
-                <div data-tockify-component="calendar" data-tockify-calendar="walter.rene.cruz"></div>
-                <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
+                <div data-tockify-component="calendar" data-tockify-calendar="spirited"></div>
+                <Script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></Script>
             </div>
         </EventosContainer>
     )
 }
 
 const EventosContainer = styled.div`
-position: relative;
 .hero-section {
         width: 100%;
         height: 30em;
         margin: 0 auto;
         overflow: hidden;
-        img {
+        flex: 1;
+        position: relative;
+        .image-container {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: -1;
-            height: 30em;
+            height: 100%;
             width: 100%;
-            object-fit: cover;
+            z-index: -1;
         }
         .text-content {
             padding-bottom: 1em;
@@ -59,8 +55,10 @@ position: relative;
         }
     }
     .calendar {
+        flex: 2;
         width: 80%;
         margin: 0 auto;
+        position: relative;
     }
     @media (max-width: 800px){
         .hero-section{

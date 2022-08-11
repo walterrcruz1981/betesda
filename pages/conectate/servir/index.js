@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components'
 import BlogCard from '../../../components/elements/cards/BlogCard';
 import { ministerios } from '../../../public/assets/page-content/servirContent'
+import Image from 'next/image'
 
 function Servir() {
     useEffect(() => {
@@ -16,7 +17,7 @@ function Servir() {
     return (
         <ServirContainer>
             <div className='hero-section flex-center'>
-                <img src="https://images.unsplash.com/photo-1614886205583-92fe9eaa38fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
+                <Image layout='fill' src="https://images.unsplash.com/photo-1614886205583-92fe9eaa38fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="servir" />
                 <div className="text-content">
                     <h1 className='text-shadow'>Ocupamos tu ayuda</h1>
                     <p className='text-shadow'>Usa tus dones y talentos para marcar la diferencia sirviendo
@@ -34,7 +35,7 @@ function Servir() {
                 <h2 className='description text-shadow'>
                     Comience a ofrecerse como voluntario y vea la diferencia inmediata que puede marcar al servir en Ministerios Betesda
                 </h2>
-                <img src="https://images.unsplash.com/photo-1536704382439-da99b6ccc0cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="" />
+                <Image layout='fill' src="https://images.unsplash.com/photo-1536704382439-da99b6ccc0cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="form image" />
 
                 <iframe style={{ opacity: .8 }} src="https://docs.google.com/forms/d/e/1FAIpQLSfn450Mxu8t7prYsMww2atUOWDBfPW16h84ptqMnJI_P_ybFA/viewform?embedded=true" frameBorder="0" marginHeight="0" marginWidth="0">Loading…</iframe>
             </div>

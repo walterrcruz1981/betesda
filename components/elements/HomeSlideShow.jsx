@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Link from 'next/link'
 import VideoSlideShow from './VideoSlideShow';
 import { useState } from 'react';
+import Image from 'next/image'
 
 function HomeSlideShow({ anuncios, videos, slideShow }) {
     console.log(anuncios)
@@ -26,7 +27,7 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
                             const { link } = buttonLink[0].fields
                             return <SplideSlide className='slide-container' key={slide.sys.id}>
                                 <div className='slide-style'>
-                                    <img src={url} alt={title} />
+                                    <Image layout='fill' src={'https:' + url} alt={title} />
                                     <h1 className='text-shadow'>{subTitle}<br /><span>{title}</span></h1>
                                     <button><Link href={link}><a>{buttonText}</a></Link></button>
                                 </div>

@@ -2,6 +2,7 @@ import { Splide } from "@splidejs/react-splide";
 import { Video } from "@splidejs/splide-extension-video";
 import "@splidejs/splide-extension-video/dist/css/splide-extension-video.min.css";
 import styled from "styled-components";
+import Image from 'next/image'
 
 const SPLIDE_OPTIONS = {
     pagination: false,
@@ -31,7 +32,9 @@ function VideoSlideShow({ videos }) {
                     const { file, title: imageTitle } = posterImage.fields
                     return <li key={video.sys.id} className="splide__slide" data-splide-youtube={videoUrl}>
                         <div className="splide__slide__container">
-                            <img className="image" src={file.url} alt={imageTitle} />
+                            <div className="video-image">
+                                <Image layout='fill' className="image" src={'https:' + file.url} alt={imageTitle} />
+                            </div>
                         </div>
                         <div className="content">
                             <h1 className="text-shadow">{title}</h1>
@@ -56,7 +59,7 @@ const VideoSlideShowContainer = styled.div`
    .splide__slide {
     width: 100%;
     height: 45em;
-    img {
+    .video-image {
         width: 100%;
         height: 44.96em;
         object-fit: cover;

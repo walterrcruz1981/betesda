@@ -21,7 +21,7 @@ function CincoGigantes({ video }) {
         <div className="video-container flex-center">
 
           {!isPlaying ? <> <a className='play-icon'><BsPlayCircle onClick={playTheVideo}></BsPlayCircle></a>
-            <Image layout='fill' src={poster} /></>
+            <Image layout='fill' src={poster} alt='cinco gigantes image' /></>
             : null}
           <video id='player' src={video} controls ></video>
         </div>
@@ -32,7 +32,7 @@ function CincoGigantes({ video }) {
               return (
                 activeTab === id ? <div key={id}>
                   <div className="image">
-                    <Image objectFit='cover' layout='fill' src={item.imageUrl} />
+                    <Image objectFit='cover' layout='fill' src={item.imageUrl} alt='gigantes' />
                   </div>
                   <p >{item.description}</p></div> : null
               )

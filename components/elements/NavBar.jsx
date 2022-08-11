@@ -16,7 +16,7 @@ const NavBar = () => {
 
             <div className='logo'>
                 <Link href={logoLink}>
-                    <a><Image src={logo} /></a>
+                    <a><Image src={logo} alt='logo' /></a>
                 </Link>
             </div>
             <div className='nav-links flex'>

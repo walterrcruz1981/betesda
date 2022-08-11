@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
+import Image from 'next/image';
 
 function Jovenes() {
     return (
         <JovenesContainer>
             <div className='hero flex-center'>
                 <h1 className='text-shadow'>Jovenes</h1>
-                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80" alt="" />
+                <Image layout='fill' src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80" alt="jovenes" />
             </div>
             <div className="intro primary-color">
                 <h1>QUIEN SOMOS</h1>
