@@ -10,10 +10,6 @@ export const navLinks = [
         href: '/planpeace'
     },
     {
-        name: 'Capellania',
-        href: '/planpeace'
-    },
-    {
         name: 'Somos',
         href: '/somos'
     },

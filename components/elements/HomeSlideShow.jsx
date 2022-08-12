@@ -27,7 +27,7 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
                             const { link } = buttonLink[0].fields
                             return <SplideSlide className='slide-container' key={slide.sys.id}>
                                 <div className='slide-style'>
-                                    <Image layout='fill' src={'https:' + url} alt={title} />
+                                    <Image layout='fill' objectFit='cover' src={'https:' + url} alt={title} priority />
                                     <h1 className='text-shadow'>{subTitle}<br /><span>{title}</span></h1>
                                     <button><Link href={link}><a>{buttonText}</a></Link></button>
                                 </div>
@@ -36,10 +36,11 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
 
                     </Splide>
                 }
-                <div className="more-video-container">
-                    <a onClick={() => setActiveSlide(!activeSlide)} className='more-videos text-shadow'>{activeSlide ? 'Ver Anuncios' : 'Ver Sermones'}</a>
-                </div>
+
                 <div className="control-panel">
+                </div>
+                <div onClick={() => setActiveSlide(!activeSlide)} className="more-video-container">
+                    <a className='more-videos text-shadow'>{activeSlide ? 'Ver Anuncios' : 'Ver Sermones'}</a>
                 </div>
             </SlideShowContainer>
         </>
@@ -50,14 +51,14 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
 const SlideShowContainer = styled.div`
 box-shadow: 1px 1px 4px black;
 margin-bottom: 3em;
-background-color: #ff00007a;
-position: relative;
+background-color: #000000;
+position: sticky;
 .control-panel {
-    width: 50%;
+    width: 60%;
     height: 4.2em;
-    background-color: #ffffff;
+    background-color: #acacac;
     position: absolute;
-    top: 95%;
+    top: 100%;
     left: 50%;
     right: 50%;
     transform: translate(-50%);
@@ -65,21 +66,17 @@ position: relative;
 }
 
 .more-video-container {
-    position: absolute;
-    right: -6em;
-    top: 50%;
-    transform: rotate(270deg);
     z-index: 4;
-    background-color: #c9c9c968;
-    padding: 1em 2em;
-    border-radius: 9px;
+    background-color: #2b72f7;
+    padding: 1vh 2vw;
+    text-align: center;
     &:hover {
-        background-color: #2b72f7;
+        background-color: #2b72f78d;
         color: #0c0c0cdd;
     }
     .more-videos {
     z-index: 4;
-    font-size: 3rem;
+    font-size: 24px;
     color: white;
     }
 }
@@ -104,12 +101,12 @@ position: relative;
     }
 }
 .splide__arrow--next{
-    top: 100%;
+    top: 111%;
    right: 30%;
 
 }
 .splide__arrow--prev{
-    top: 100%;
+    top: 111%;
     left: 30%;
 }
 
@@ -123,37 +120,48 @@ flex-direction: column;
 justify-content: flex-end;
 row-gap: 1.5em;
 padding-bottom: 10rem;
-img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    object-fit: cover;
-    bottom: 0;
-    top: 0;
-}
 
 h1 {
+    padding-left: 1em;
     color: #fff;
     font-size: 1.8rem;
+    z-index: 1;
 }
 span {
     color: #fff;
     font-size: 3rem;
     padding: 1em 0;
 }
-@media (max-width: 35em) {
-    height: 22em;
-    padding-bottom: 2em;
-    h1 {
-    color: #fff;
-    font-size: 1.1rem;
 }
-span {
-    color: #fff;
-    font-size: 1.5rem;
-    padding: 1em 0;
+@media (max-width: 800px) {
+        height: 33em;
+        padding-bottom: 2em;
+        .slide-style{
+            height: 30em;
+        }
+        .splide__arrow--next{
+            top: 116%;
+            right: 30%;
+        }
+        .splide__arrow--prev{
+             top: 116%;
+             left: 30%;
+        }
+        h1 {
+        color: #fff;
+        font-size: 1.1rem;
+    }
+
+    span {
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 1em 0;
 }
+.more-video-container {
+    border-radius: 0;
+}
+.control-panel {
+    height: 4em;
 }
 }
 

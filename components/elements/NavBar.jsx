@@ -45,7 +45,7 @@ overflow: hidden;
 height: 4em;
 justify-content: space-between;
 position: relative;
-margin: 1em 1em;
+margin: .1em 1em;
 z-index: 99;
     .logo {
         width:12em;

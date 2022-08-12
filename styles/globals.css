@@ -39,7 +39,7 @@ button {
   background-color: #cfdff5d3;
 }
 button:hover {
-  box-shadow: -1px -2px 1px red;
+  box-shadow: 1px 2px 1px rgb(10, 253, 140);
 }
 
 .text-space {

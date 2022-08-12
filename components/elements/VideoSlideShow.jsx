@@ -33,7 +33,7 @@ function VideoSlideShow({ videos }) {
                     return <li key={video.sys.id} className="splide__slide" data-splide-youtube={videoUrl}>
                         <div className="splide__slide__container">
                             <div className="video-image">
-                                <Image layout='fill' className="image" src={'https:' + file.url} alt={imageTitle} />
+                                <Image layout='fill' objectFit="cover" className="image" src={'https:' + file.url} alt={imageTitle} />
                             </div>
                         </div>
                         <div className="content">
@@ -73,6 +73,16 @@ const VideoSlideShowContainer = styled.div`
     background: #69696975;
     &::after {
         border-color: transparent transparent transparent #ffffff;
+    }
+   }
+   @media (max-width: 800px){
+    .splide__slide{
+        height: 30em;
+        .video-image {
+        width: 100%;
+        height: 29.96em;
+        object-fit: cover;
+    }
     }
    }
 `;

@@ -8,7 +8,7 @@ const liveUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&c
 const initialUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8br10Qoo5bZvTKiJhPkdOA&order=date&maxResults=20&key=';
 const url = 'https://youtube.googleapis.com/youtube/v3/search?&part=snippet&channelId=UC8br10Qoo5bZvTKiJhPkdOA&order=date&maxResults=20&q=';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const apikey = process.env.YOUTUBE_API_KEY
     const res = await fetch(`${url}&key=${process.env.YOUTUBE_API_KEY}`)
     const data = await res.json()
@@ -16,7 +16,8 @@ export async function getServerSideProps() {
         props: {
             data,
             apikey
-        }
+        },
+        revalidate: 1
     }
 }
 
@@ -78,7 +79,7 @@ function Sermones({ data, apikey }) {
                             const { medium: image } = thumbnails
                             return (
                                 <div key={index} onClick={() => setActiveVideo(index)} className={activeVideo === index ? "video-card active-video" : 'video-card'}>
-                                    <div className='image-container'><Image layout='fill' src={image.url} alt="video image" /></div>
+                                    <div className='image-container'><Image layout='fill' src={image.url} alt="video image" priority /></div>
                                     <h4>{title}</h4>
                                 </div>
                             )
@@ -91,12 +92,15 @@ function Sermones({ data, apikey }) {
     )
 }
 const SermonesContainer = styled.div`
+margin: 0 1em;
+height: 100%;
 .live{
     color: red;
     transition: all 3s infinite;
     transform: translateX(3em);
 }
 .header-section {
+    padding: 0 0 1em;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
@@ -130,6 +134,7 @@ const SermonesContainer = styled.div`
 }
 .main-content {
     display: flex;
+    top: 0;
     .latest-sermon {
     position: relative;
     height: 40em;
@@ -151,27 +156,17 @@ const SermonesContainer = styled.div`
             transform: scale(1.1);
         }
     }
-
-    .description {
-        position: absolute;
-        bottom: 4em;
-        left: 4em;
-         h3 {
-            color: white;
-            letter-spacing: 1px;
-         }
-    }
 }
 .cards-title {
     margin-bottom: .7em;
 }
 .video-cards {
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: .7em;
     margin: 0 auto;
     height: 37em;
+    overflow: auto;
     .active-video {
         background-color: #00000029;
     }
@@ -201,21 +196,15 @@ const SermonesContainer = styled.div`
     }
 }
 }
-.playlist {
-    height: 40em;
-    width: 70%;
-    background-color: black;
-    margin: 0 auto;
-    iframe {
-        width: 100%;
-        height: 100%;
-    }
-}
-@media (max-width: 900px) {
+
+@media (max-width: 930px) {
     .main-content{
         flex-direction: column;
         .latest-sermon {
             height: 30em;
+            position: sticky;
+            top: 0;
+            z-index: 1;
         }
         .video-cards {
             height: 100%;
@@ -223,6 +212,13 @@ const SermonesContainer = styled.div`
         }
     }
 
+}
+@media (max-width: 600px){
+    padding-top: 0;
+    .header-section {
+        flex-direction: column;
+        
+    }
 }
 
 `;

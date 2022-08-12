@@ -61,6 +61,7 @@ const HomeContainer = styled.div`
   gap: 1.9em;
   width: 100%;
   margin: 0 auto;
+  padding-top: 3em;
   .description {
     display: none;
     background-color: red;
