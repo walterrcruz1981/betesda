@@ -30,7 +30,7 @@ const NavBar = () => {
                 }
                 {!activeNav ? <div className="menu-links flex-center">
                     {navLinks.map(link => (
-                        <Link key={link.name} href={link.href}>{link.name}</Link>
+                        <Link key={link.name} href={link.href}><a onClick={() => setActiveNav(!activeNav)}>{link.name}</a></Link>
                     ))}
                 </div> : null}
             </div>
@@ -46,7 +46,7 @@ height: 4em;
 justify-content: space-between;
 position: relative;
 margin: .1em 1em;
-z-index: 99;
+z-index: 9999;
     .logo {
         width:12em;
         cursor: pointer;

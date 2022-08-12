@@ -44,6 +44,9 @@ function Sermones({ data, apikey }) {
         e.preventDefault()
         setSearchQuery(e.target.value)
     }
+    useEffect(() => {
+        setVideos(data)
+    }, [data])
     return (
         <SermonesContainer>
 
@@ -58,7 +61,7 @@ function Sermones({ data, apikey }) {
             <div className="main-content">
 
                 <div className="latest-sermon">
-                    {data.items?.map((video, index) => {
+                    {videos.items?.map((video, index) => {
                         const { id, snippet = {} } = video
                         const { title } = snippet
                         return (
@@ -73,7 +76,7 @@ function Sermones({ data, apikey }) {
                 <div className="search-results-container">
                     <h2 className='cards-title primary-color'>{resultTitle}</h2>
                     <div className="video-cards primary-color">
-                        {data.items?.map((video, index) => {
+                        {videos.items?.map((video, index) => {
                             const { snippet = {} } = video
                             const { title, thumbnails = {} } = snippet
                             const { medium: image } = thumbnails
