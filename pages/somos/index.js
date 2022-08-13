@@ -11,13 +11,13 @@ function Somos() {
         <SomosContainer>
             <div className="hero flex-center-column text-shadow">
                 <h1><span>Bienvenido</span><br></br>A Ministerios Betesda</h1>
-                <Image className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' priority />
+                <Image className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' priority alt='somos image' />
                 <button onClick={() => setOpenModal(true)}>Ver Video</button>
             </div>
             <Modal open={openModal} closeModal={() => setOpenModal(false)} />
             <div className="fancy-accordion flex-center-column">
                 <h1 className="header">Somos Iglesia Con Proposito</h1>
-                <Image className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' priority />
+                <Image className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' priority alt='somos' />
                 <div className="container flex-center">
                     <div className="buttons">
                         {propositos?.map((item, index) => (
@@ -25,10 +25,10 @@ function Somos() {
                         ))}
                     </div>
                     {propositos?.map((item, index) => (
-                        <div className="button-content text-shadow">
+                        <div key={index} className="button-content text-shadow">
                             <h1>{selected === index ? item.title : null}</h1>
-                            <p key={index}>{selected === index ? item.description : null} </p>
-                            {selected === index ? <Image className='image' layout='fill' objectFit='cover' src={item.imageUrl} priority /> : null}
+                            <p>{selected === index ? item.description : null} </p>
+                            {selected === index ? <Image className='image' layout='fill' objectFit='cover' src={item.imageUrl} priority alt={item.title} /> : null}
                         </div>
                     ))}
                 </div>
