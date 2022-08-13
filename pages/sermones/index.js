@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { GoSearch } from 'react-icons/go'
 import { RiCloseLine } from 'react-icons/ri'
 import Image from 'next/image'
+var he = require('he')
 
 const liveUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8br10Qoo5bZvTKiJhPkdOA&eventType=live&order=date&type=video&key=';
 const initialUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8br10Qoo5bZvTKiJhPkdOA&order=date&maxResults=20&key=';
@@ -22,7 +23,6 @@ export async function getStaticProps() {
 }
 
 function Sermones({ data, apikey }) {
-    console.log(apikey);
     const [searchQuery, setSearchQuery] = useState('')
     const [resultTitle, setResultTitle] = useState('Sugerencias')
     const [activeVideo, setActiveVideo] = useState(0)
@@ -79,11 +79,12 @@ function Sermones({ data, apikey }) {
                         {videos.items?.map((video, index) => {
                             const { snippet = {} } = video
                             const { title, thumbnails = {} } = snippet
+                            const encodeTitle = he.decode(title);
                             const { medium: image } = thumbnails
                             return (
                                 <div key={index} onClick={() => setActiveVideo(index)} className={activeVideo === index ? "video-card active-video" : 'video-card'}>
                                     <div className='image-container'><Image layout='fill' src={image.url} alt="video image" priority /></div>
-                                    <h4>{title}</h4>
+                                    <h4>{encodeTitle}</h4>
                                 </div>
                             )
                         })}
