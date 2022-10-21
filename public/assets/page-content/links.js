@@ -2,8 +2,8 @@ import { FaFacebookSquare, FaTwitterSquare, FaYoutube } from 'react-icons/fa';
 
 export const navLinks = [
     {
-        name: 'Conectate',
-        href: '/conectate'
+        name: 'Clases',
+        href: '/conectate/clases'
     },
     {
         name: 'Plan Peace',

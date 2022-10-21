@@ -10,6 +10,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -18,15 +19,22 @@ p {
   color: #4D4D4F;
   letter-spacing: 1px;
 }
+
 a {
   color: #00aeef;
   text-decoration: none;
   letter-spacing: 1px;
   cursor: pointer;
 }
+
 a:hover {
   color: red;
 }
+
+.relative {
+  position: relative;
+}
+
 button {
   border: none;
   padding: 1em 3em;
@@ -38,6 +46,7 @@ button {
   box-shadow: 1px 2px 1px black;
   background-color: #cfdff5d3;
 }
+
 button:hover {
   box-shadow: 1px 2px 1px rgb(10, 253, 140);
 }
@@ -46,33 +55,47 @@ button:hover {
   letter-spacing: 1px;
 }
 
+.center-text {
+  text-align: center;
+}
+
 .text-shadow {
   text-shadow: 1px 1px 2px black;
 }
+
 .box-shadow {
   box-shadow: 1px 2px 4px black;
 }
+
 .active {
   text-decoration: underline;
- 
+}
+
+.active-tab {
+  width: 100%;
+  color: white;
+  transition: all 500ms;
 }
 
 .flex {
   display: flex;
 }
+
 .flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .flex-center-column {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+
 .flex-reverse {
-  flex-direction:row-reverse;
+  flex-direction: row-reverse;
   text-align: right;
 }
 
@@ -80,6 +103,7 @@ button:hover {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;

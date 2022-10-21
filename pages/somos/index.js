@@ -28,7 +28,7 @@ function Somos() {
                         <div key={index} className="button-content text-shadow">
                             <h1>{selected === index ? item.title : null}</h1>
                             <p>{selected === index ? item.description : null} </p>
-                            {selected === index ? <Image className='image' layout='fill' objectFit='cover' src={item.imageUrl} priority alt={item.title} /> : null}
+                            {selected === index ? <Image layout='fill' objectFit='cover' src={item.imageUrl} priority alt={item.title} /> : null}
                         </div>
                     ))}
                 </div>
@@ -51,12 +51,18 @@ const SomosContainer = styled.div`
         }
         img{
             z-index: -1;
+            filter: blur(.5em);
         }
+
     }
     .fancy-accordion{
         position: relative;
         height: 40em;
 
+        .image {
+            z-index: -1;
+            opacity: .2;
+        }
         img {
             z-index: -1;
         }
@@ -75,17 +81,19 @@ const SomosContainer = styled.div`
             margin: 1em;
             z-index: 1;
             .button {
-                display: block;
                 background-color: white;
                 width: 300px;
                 padding: 1.5em 2em;
                 height: 5em;
+                font-size: 1.1rem;
+                font-weight: 400;
+                letter-spacing: 2px;
                 margin: 1px 0;
                 word-break: keep-all;
                 transition: all .5s;
                 transform: rotateZ(0);
                 cursor: pointer;
-                text-align: center;
+                text-align: left;
             }
             .button-reveal{
                 width: 0;

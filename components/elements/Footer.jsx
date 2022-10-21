@@ -30,7 +30,6 @@ gap: 1em;
 overflow: hidden;
 background: #4d4d4f;
 position: relative;
-margin: 1em 1em;
 padding: 2em 1em;
 .copyright {
     color: #ffffff89;

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Creemos() {
     return (
-        <div>Creemos</div>
+        <div>Creemos pues</div>
     )
 }
 
