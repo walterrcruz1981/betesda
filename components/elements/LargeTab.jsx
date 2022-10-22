@@ -15,7 +15,7 @@ function LargeTab({ tabInfo }) {
             </div>
             <div className="tab-content flex-center">
                 {tabInfo.map((image, id) => {
-                    return active === id ? <div className='tab-content-image'><Image layout="fill" objectFit="cover" src={image.imageUrl} alt='tab image'></Image></div> : null;
+                    return active === id ? (!image.imageUrl ? null : <div className='tab-content-image'><Image layout="fill" objectFit="cover" src={image.imageUrl} alt='tab images'></Image></div>) : null;
                 })}
                 {tabInfo.map((item, id) => {
                     return active === id ? <div className="tab-content-text">{item.description} </div> : null;
@@ -29,8 +29,9 @@ function LargeTab({ tabInfo }) {
 
 const LargeTabContainer = styled.div`
     width: 100%;
-    height: 40em;
+    height: auto;
     margin: 1em 0;
+    background-color: #95aa9c7f;
     overflow: hidden;
     .tab-title-container{
         justify-content: space-around;
@@ -50,6 +51,7 @@ const LargeTabContainer = styled.div`
     }
     .tab-content{
         height: 100%;
+        margin: 1em;
         .tab-content-text{
             width: 60%;
             background-color: #1b1b22c3;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components"
-import LargeTab from "../../../components/elements/cards/LargeTab";
+import LargeTab from "../../../components/elements/LargeTab";
 import propositoImage from '../../../public/assets/images/02.png'
 import { introText, classInfo } from '../../../public/assets/page-content/classContent'
 

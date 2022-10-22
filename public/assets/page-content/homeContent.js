@@ -98,6 +98,14 @@ export const classes = [
         imageUrl: 'https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
         height: '30rem'
     },
+    {
+        title: 'Grupos Pequeños',
+        subTitle: 'Crescamos Juntos',
+        buttonText: 'Grupos',
+        buttonLink: 'conectate/grupos',
+        imageUrl: 'https://images.unsplash.com/photo-1609234656388-0ff363383899?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80',
+        height: '30rem'
+    },
 
 ]
 

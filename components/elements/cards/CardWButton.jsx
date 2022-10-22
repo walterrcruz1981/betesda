@@ -21,7 +21,7 @@ const CardContainer = styled.div`
       box-shadow: 1px 1px 1px black;
       overflow: hidden;
       position: relative;
-      background: linear-gradient(to top, #00000050, #00000026, #ffffff10);
+      background: linear-gradient(to bottom, #0000004e, #00000067, #ffffff10);
       img {
         position: absolute;
         object-fit: cover;
@@ -30,7 +30,7 @@ const CardContainer = styled.div`
       .content {
         width: 60%;
         row-gap: .4em;
-        line-height: 1.4em;
+        line-height: 1.7em;
         color: white;
         z-index: 1;
         p {

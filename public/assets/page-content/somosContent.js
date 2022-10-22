@@ -305,14 +305,10 @@ export const declaracion = [
             Los niños, desde el momento de la concepción, son una bendición y herencia del Señor. Los padres deben demostrar a sus hijos el modelo de Dios para el matrimonio. Los padres deben enseñar a sus hijos los valores espirituales y morales, y dirigirlos, mediante el ejemplo de un estilo de vida consistente y una disciplina amorosa, para que hagan decisiones basadas en la verdad bíblica. Los hijos deben honrar y obedecer a sus padres.
             <br></br><br></br>
             Génesis 1.26-28; 2.15-25; 3.1-20; Éxodo 20.12; Deuteronomio 6.4-9; Josué 24.15; 1 Samuel 1.26-28; Salmos 51.5; 78.1-8; 127; 128; 139.13-16; Proverbios 1.8; 5.15-20; 6.20-22; 12.4; 13.24; 14.1; 17.6; 18.22; 22.6,15; 23.13-14; 24.3: 29.15,17; 31.10-31; Eclesiastés 4.9-12; 9.9; Malaquías 2.14-16; Mateo 5.31-32; 18.2-5; 19.3-9; Marcos 10.6-12; Romanos 1.18-32; 1 Corintios 7.1-16; Efesios 5.21-33; 6.1-4; Colosenses 3.18-21; 1 Timoteo 5.8,14; 2 Timoteo 1.3-5; Tito 2.3-5;</p>
-    },
-    {
-        title: '',
-        description: <p></p>
     }
 ]
 
-export const propositos = [
+export const propositosUnicos = [
     {
         title: 'Misión',
         description: <p className='description'><b>Ministerios Betesda</b> existe para celebrar la presencia de Dios por medio de la adoración <em>(Magnificar)</em>,

@@ -45,7 +45,7 @@ export default function Home({ videos, anuncios }) {
       <div className="cards-container">
         <Link href={content.information[1].buttonLink}><a><CardWButton content={content.information[1]} borderRadius='0' height='30em' /></a></Link>
         <Link href={content.information[0].buttonLink}><a><CardWButton content={content.information[0]} borderRadius='0' height='30em' /></a></Link>
-        <Link href={content.classes[1].buttonLink}><a><CardWButton content={content.classes[1]} borderRadius='0' height='30em' /></a></Link>
+        <Link href={content.classes[2].buttonLink}><a><CardWButton content={content.classes[2]} borderRadius='0' height='30em' /></a></Link>
       </div>
       <div className="cards-container">
         <Link href={content.heroContent1.buttonLink}><a><CardWDescription content={content.heroContent1} borderRadius='0' height='40em' /></a></Link>

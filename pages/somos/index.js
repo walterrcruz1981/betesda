@@ -2,22 +2,48 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Modal from '../../components/elements/Modal';
+import ManyTabInfo from '../../components/elements/ManyInfoTabs'
 import { propositos } from '../../public/assets/page-content/propositos'
+import { propositosUnicos, valores, declaracion } from '../../public/assets/page-content/somosContent'
+import Link from 'next/link';
 
 function Somos() {
     const [selected, setSelected] = useState(0)
     const [openModal, setOpenModal] = useState(false)
+    const [openLink, setOpenLink] = useState(false)
+    const [multiTab, setMultiTab] = useState(0)
+    const choiceButtons = [
+        { title: 'Proposito', id: 0 },
+        { title: 'Valores', id: 1 },
+        { title: 'Declaracion', id: 2 }
+    ]
+    const moreInfoSideLink = [
+        { title: 'Pastor General', href: '/somos/ronald', id: '0' },
+        { title: 'Grupos Pequeños', href: '/conectate/grupos', id: '1' },
+        { title: 'Clases', href: '/conectate/clases', id: '2' },
+        { title: 'Contacto', href: '/contacto', id: '3' },
+
+    ]
     return (
         <SomosContainer>
-            <div className="hero flex-center-column text-shadow">
+            <div className={!openLink ? "side-link close-side-link" : 'side-link'}>
+                <h5>Mas Informacion</h5>
+                <hr></hr>
+                {moreInfoSideLink.map(item => {
+                    return <Link key={item.id} href={item.href}><a>{item.title}<br></br></a></Link>
+                })}
+                <h2 onClick={() => setOpenLink(!openLink)} className={openLink ? '' : 'close-button '}>{openLink ? <a>X</a> : 'lll'}</h2>
+            </div>
+            <div className="hero flex-center-column text-shadow relative">
+
                 <h1><span>Bienvenido</span><br></br>A Ministerios Betesda</h1>
-                <Image className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' priority alt='somos image' />
+                <Image priority className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='somos image' />
                 <button onClick={() => setOpenModal(true)}>Ver Video</button>
             </div>
             <Modal open={openModal} closeModal={() => setOpenModal(false)} />
             <div className="fancy-accordion flex-center-column">
                 <h1 className="header">Somos Iglesia Con Proposito</h1>
-                <Image className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' priority alt='somos' />
+                <Image priority className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='somos' />
                 <div className="container flex-center">
                     <div className="buttons">
                         {propositos?.map((item, index) => (
@@ -33,11 +59,54 @@ function Somos() {
                     ))}
                 </div>
             </div>
+            <div className="button-container flex-center">
+                {choiceButtons.map(button => {
+                    return <button key={button.id} className={multiTab === button.id ? 'active-tab' : ''} onClick={() => setMultiTab(button.id)}>{button.title}</button>
+                })}
+            </div>
+
+            {multiTab === 0 ? <ManyTabInfo tabContent={propositosUnicos}></ManyTabInfo> : null
+                || multiTab === 1 ? <ManyTabInfo tabContent={valores}></ManyTabInfo> : null
+                    || multiTab === 2 ? <ManyTabInfo tabContent={declaracion}></ManyTabInfo> : null}
         </SomosContainer>
     )
 }
 
 const SomosContainer = styled.div`
+
+    .side-link{
+        position: fixed;
+        right: 0;
+        top: 40%;
+        text-align: right;
+        background-color: white;
+        margin: 0 1em;
+        padding: 1em;
+        box-shadow: -2px -2px 20px ;
+        width: 12%;
+        color: #7c7875;
+        text-overflow: none;
+        z-index: 100;
+        transition: all 1s;
+        a{
+            font-size: small;
+        }
+        .close-button{
+            position: absolute;
+            left: 1em;
+            bottom: 30%;
+            cursor: pointer;
+        }
+    }
+    .close-side-link{
+            right: -2em;
+            width: 7%;
+            cursor: pointer;
+            h3, h4, h5, hr,a{
+                opacity: 0;
+                transition: all 500ms ease-in-out;
+            }
+        }
     .hero {
         padding: 1em;
         position: relative;
@@ -52,6 +121,7 @@ const SomosContainer = styled.div`
         img{
             z-index: -1;
             filter: blur(.5em);
+            opacity: .5;
         }
 
     }
@@ -109,7 +179,46 @@ const SomosContainer = styled.div`
                 }
             }
     }
+    .button-container{
+        width: auto;
+        margin: 2em;
+        gap: 1em;
+        transition: all 1s;
+        justify-content: space-evenly;
+        button{
+            background-color: aliceblue;
+            color: black;
+            box-shadow: none;
+            outline: 1px solid;
+            width: 100%;
+            position: relative;
+            &:hover{
+                color: #00a2ff;
+            }
+        }
+        .active-tab{
+            background-color: #5b5b7c;
+           &::after{
+            content: '';
+            width: 60%;
+            height: 45px;
+            position: absolute;
+            bottom: -.1em;
+            color: black;
+            font-size: xx-large;
+            transform: translate(-80%);
+            box-shadow: inset 5px 0 1px aliceblue;
+           }
+            color: white;
+        }
+
+    }
+
     @media (max-width: 800px) {
+        .side-link{
+            display: none;
+        }
+
         .hero{
             height: 25em;
             h1 {
