@@ -198,17 +198,7 @@ const SomosContainer = styled.div`
         }
         .active-tab{
             background-color: #5b5b7c;
-           &::after{
-            content: '';
-            width: 60%;
-            height: 45px;
-            position: absolute;
-            bottom: -.1em;
-            color: black;
-            font-size: xx-large;
-            transform: translate(-80%);
-            box-shadow: inset 5px 0 1px aliceblue;
-           }
+
             color: white;
         }
 

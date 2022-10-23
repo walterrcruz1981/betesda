@@ -20,6 +20,7 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className='nav-links flex'>
+                <Link href={'/sermones'}><a>Live</a></Link>
                 {navLinks.map(link => (
                     <Link key={link.name} href={link.href} className='active'>{link.name}</Link>
                 ))}

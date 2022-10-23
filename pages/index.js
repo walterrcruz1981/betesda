@@ -6,6 +6,10 @@ import CardWButton from "../components/elements/cards/CardWButton";
 import HomeSlideShow from "../components/elements/HomeSlideShow";
 import * as content from '../public/assets/page-content/homeContent'
 import { createClient } from "contentful";
+import { useEffect, useState } from "react";
+import { youtubeRes } from '../public/assets/page-content/youtube'
+
+const youtubeApiUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8br10Qoo5bZvTKiJhPkdOA&eventType=live&order=date&type=video&key='
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -13,24 +17,46 @@ const client = createClient({
 });
 
 export async function getStaticProps() {
-
+  const apiKey = process.env.YOUTUBE_API_KEY;
+  const res = await fetch(`${youtubeApiUrl}${apiKey}`)
+  const data = await res.json();
   const videos = await client.getEntries({ content_type: 'videos' })
   const anuncios = await client.getEntries({ content_type: 'anuncios' })
   return {
     props: {
       videos,
-      anuncios
+      anuncios,
+      data
     }
   }
 }
 
-
-
-export default function Home({ videos, anuncios }) {
+export default function Home({ videos, anuncios, data }) {
+  const [isLive, setIsLive] = useState(false)
+  const [videoId, setVideoId] = useState([])
+  function checkLiveStatus(check) {
+    if (check.pageInfo.totalResults !== 0) setIsLive(true)
+    else return
+    const { id } = check.items[0]
+    setVideoId(id.videoId)
+  }
+  useEffect(() => {
+    checkLiveStatus(data)
+  }, [])
   return <HomeContainer>
+
     <PageHeader title='Home'></PageHeader>
     <div className="cards-container">
-      <HomeSlideShow anuncios={anuncios} videos={videos.items} slideShow={content.slideShow} />
+      {isLive
+        ? <div className="live-video">
+          <iframe frameBorder='none' width='100%' height='100%' src={'https://www.youtube.com/embed/' + videoId}
+            title='live video'
+            allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen>
+          </iframe>
+        </div>
+        : <HomeSlideShow anuncios={anuncios} videos={videos.items} slideShow={content.slideShow} />}
+
     </div>
     <div className="container flex">
       <div className="cards-container">
@@ -56,6 +82,9 @@ export default function Home({ videos, anuncios }) {
 }
 
 const HomeContainer = styled.div`
+.live-video{
+  height: 44em;
+}
 .container {
   flex-direction: column;
   gap: 1.9em;
