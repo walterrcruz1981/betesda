@@ -27,7 +27,8 @@ export async function getStaticProps() {
       videos,
       anuncios,
       data
-    }
+    },
+    revalidate: 1
   }
 }
 
