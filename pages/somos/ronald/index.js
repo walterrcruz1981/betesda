@@ -12,7 +12,7 @@ function Ronald() {
             <div className="hero flex">
                 <div className="hero-content flex-center">
                     <div className="hero-image">
-                        <Image objectFit='cover' src={biography.imageUrl1}></Image>
+                        <Image objectFit='cover' src={biography.imageUrl1} alt='pastor ronald image'></Image>
                     </div>
                     <div className="text-content">
                         <h1>Pastor Ronald Vides</h1>
@@ -88,7 +88,7 @@ letter-spacing: 1px;
         float: none;
     }
     .hero{
-        height: 30em;
+        height: 32em;
         .hero-content{
         position: relative;
         align-items: flex-end;
@@ -97,8 +97,9 @@ letter-spacing: 1px;
         }
             .hero-image{
                 position: absolute;
-                height: 30em;
+                height: 20em;
                 width: 10em;
+                top: -2em;
             }
         }
     }
