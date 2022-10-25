@@ -5,7 +5,8 @@ import styled from "styled-components";
 import Image from 'next/image'
 
 const SPLIDE_OPTIONS = {
-    pagination: false,
+    pagination: true,
+    arrows: false,
     mediaQuery: 'min',
     rewind: true,
     video: {
@@ -47,7 +48,7 @@ function VideoSlideShow({ videos }) {
 }
 
 const VideoSlideShowContainer = styled.div`
-  background-color: blue;
+  background-color: #000000;
     position: relative;
     .content {
         position: absolute;

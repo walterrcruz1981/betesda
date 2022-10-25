@@ -14,9 +14,9 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
             <SlideShowContainer>
                 {activeSlide ? <VideoSlideShow videos={videos} /> :
                     <Splide options={{
-                        pagination: false,
-                        arrows: true,
+                        pagination: true,
                         autoplay: false,
+                        arrows: false,
                         interval: 10000,
                         mediaQuery: 'min',
                         rewind: true
@@ -37,8 +37,7 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
                     </Splide>
                 }
 
-                <div className="control-panel">
-                </div>
+
                 <div onClick={() => setActiveSlide(!activeSlide)} className="more-video-container">
                     <a className='more-videos text-shadow'>{activeSlide ? 'Ver Anuncios' : 'Ver Sermones'}</a>
                 </div>
@@ -52,26 +51,14 @@ const SlideShowContainer = styled.div`
 box-shadow: 1px 1px 4px black;
 margin-bottom: 3em;
 background-color: #000000;
-position: sticky;
-.control-panel {
-    width: 60%;
-    height: 4.2em;
-    background-color: #acacac;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%);
-    box-shadow: -0 -5px 2px rgba(0, 0, 0, .20);
-}
 
 .more-video-container {
     z-index: 4;
-    background-color: #2b72f7;
+    background-color: #515a69;
     padding: 1vh 2vw;
     text-align: center;
     &:hover {
-        background-color: #2b72f78d;
+        background-color: #7687b68d;
         color: #0c0c0cdd;
     }
     .more-videos {
@@ -84,31 +71,11 @@ position: sticky;
 .splide__pagination__page {
     width: .6em;
     height: .6em;
-    background-color: transparent;
-    outline: 2px solid #2b72f7;
-    border: 1px solid red;
+    background-color: white;
+    outline: 3px solid #2b72f7;
     margin: 1em;
 }
-.splide__arrow {
-    height: 4em;
-    width: 4em;
-    background-color: #0c0c0cdd;  
-    svg {
-        height: 2em;
-        width: 2em;
-        fill: white;
-        stroke: black;
-    }
-}
-.splide__arrow--next{
-    top: 111%;
-   right: 30%;
 
-}
-.splide__arrow--prev{
-    top: 111%;
-    left: 30%;
-}
 
 .slide-style {
 width: 100%;
