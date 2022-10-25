@@ -20,13 +20,13 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className='nav-links flex'>
-                {navLinks.map(link => (
-                    <Link key={link.name} href={link.href} className='active'>{link.name}</Link>
+                {navLinks.map((link, index) => (
+                    <Link key={index} href={link.href}><a>{link.name}</a></Link>
                 ))}
             </div>
             <div className="mobile-nav">
                 {!activeNav ? <FcMinus onClick={() => setActiveNav(!activeNav)} className='hamburger' /> :
-                    <FcMenu onClick={() => setActiveNav(!activeNav)} className='hamburger' />
+                    < FcMenu onClick={() => setActiveNav(!activeNav)} className='hamburger' />
                 }
                 {!activeNav ? <div className="menu-links flex-center">
                     {navLinks.map(link => (

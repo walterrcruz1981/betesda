@@ -8,7 +8,7 @@ function LargeTab({ tabInfo }) {
         <LargeTabContainer className="relative">
             <div className="tab-title-container center-text flex">
                 {tabInfo.map((title, index) => {
-                    return <div onClick={() => setActive(index)} key={index} className={active === index ? "active-tab text-shadow" : 'tab-title'}>
+                    return <div onClick={() => setActive(index)} key={index} className={active === index ? "active-tab text-shadow text-space" : 'tab-title text-shadow text-space'}>
                         <h4>{title.title}</h4>
                     </div>
                 })}
@@ -31,6 +31,7 @@ const LargeTabContainer = styled.div`
     width: 100%;
     height: auto;
     margin: 1em 0;
+    color: white;
     background-color: #95aa9c7f;
     overflow: hidden;
     .tab-title-container{

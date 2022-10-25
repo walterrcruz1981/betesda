@@ -5,6 +5,7 @@ import { navLinks } from '../../public/assets/page-content/links';
 import Image from 'next/image'
 import Link from 'next/link'
 import SocialLinks from '../features/SocialLinks';
+import { useState } from 'react';
 
 const Footer = () => {
     return (
@@ -13,8 +14,8 @@ const Footer = () => {
                 <Link href='/'><Image src={logo} alt='logo' /></Link>
             </div>
             <div className='nav-links flex-center'>
-                {navLinks.map((link, key) => (
-                    <Link key={key} href={link.href}>{link.name}</Link>
+                {navLinks.map((link, index) => (
+                    <Link key={index} href={link.href}><a className='active'>{link.name}</a></Link>
                 ))}
             </div>
             <SocialLinks />

@@ -47,7 +47,7 @@ function Somos() {
                 <div className="container flex-center">
                     <div className="buttons">
                         {propositos?.map((item, index) => (
-                            <div key={index} onClick={() => setSelected(index)} className={index !== selected ? 'button text-shadow' : 'button text-shadow  button-reveal'} href="">{item.title}</div>
+                            <div key={index} onClick={() => setSelected(index)} className={index !== selected ? 'button ' : 'button text-shadow  button-reveal'} href="">{item.title}</div>
                         ))}
                     </div>
                     {propositos?.map((item, index) => (
@@ -157,13 +157,14 @@ const SomosContainer = styled.div`
                 height: 5em;
                 font-size: 1.1rem;
                 font-weight: 400;
-                letter-spacing: 2px;
+                letter-spacing: 3px;
                 margin: 1px 0;
                 word-break: keep-all;
                 transition: all .5s;
                 transform: rotateZ(0);
                 cursor: pointer;
                 text-align: left;
+                font-weight: 600;
             }
             .button-reveal{
                 width: 0;

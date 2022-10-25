@@ -5,7 +5,7 @@ body {
   max-width: 90em;
   min-height: 100%;
   margin: 1em auto 0;
-  color: #4D4D4F;
+  color: #818192;
   scroll-behavior: smooth;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -16,7 +16,7 @@ body {
 }
 
 p {
-  color: #4D4D4F;
+  color: #727275;
   letter-spacing: 1px;
 }
 
@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-  color: red;
+  color: rgb(124, 164, 202);
 }
 
 .relative {
@@ -60,7 +60,8 @@ button:hover {
 }
 
 .text-shadow {
-  text-shadow: 1px 1px 2px black;
+  text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.664),
+    1px 1px 2px black;
 }
 
 .box-shadow {
@@ -73,7 +74,7 @@ button:hover {
 
 .active-tab {
   width: 100%;
-  color: white;
+  color: rgb(255, 255, 255);
   transition: all 500ms;
 }
 
