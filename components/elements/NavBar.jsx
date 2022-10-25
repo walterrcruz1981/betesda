@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { FcMenu, FcMinus } from 'react-icons/fc';
 import { navLinks } from '../../public/assets/page-content/links';
-import logo from '../../public/assets/images/logo.png'
+import logo from '../../public/assets/images/bannerLogo.png'
 import Image from 'next/image'
 
 import Link from 'next/link'
@@ -20,7 +20,6 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className='nav-links flex'>
-                <Link href={'/sermones'}><a>Live</a></Link>
                 {navLinks.map(link => (
                     <Link key={link.name} href={link.href} className='active'>{link.name}</Link>
                 ))}
@@ -47,6 +46,7 @@ height: 4em;
 justify-content: space-between;
 position: relative;
 margin: .1em 1em;
+margin-bottom: 2em;
 z-index: 9999;
     .logo {
         width:12em;
@@ -65,7 +65,7 @@ z-index: 9999;
             color: blue;
             position: absolute;
             top: .5em;
-            right: 2em;
+            right: 1em;
             cursor: pointer;
         }
         .menu-links {

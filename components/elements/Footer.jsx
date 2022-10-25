@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import logo from '../../public/assets/images/logo.png'
+import logo from '../../public/assets/images/logo2.png'
 import { navLinks } from '../../public/assets/page-content/links';
 
 import Image from 'next/image'
@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <FooterContainer className='flex-center'>
             <div className='logo'>
-                <Image src={logo} alt='logo' />
+                <Link href='/'><Image src={logo} alt='logo' /></Link>
             </div>
             <div className='nav-links flex-center'>
                 {navLinks.map((link, key) => (
@@ -30,19 +30,23 @@ gap: 1em;
 overflow: hidden;
 background: #4d4d4f;
 position: relative;
+margin-top: 1em;
 padding: 2em 1em;
 .copyright {
     color: #ffffff89;
     font-size: .8rem;
 }
     .logo {
-        width:12em;
+        width:8em;
     }
     .nav-links {
         gap: 1.6em;
         font-weight: 700;
        a {
-        color: grey;
+        color: #9e9999;
+        &:hover{
+            color: white;
+        }
        }
     }
     

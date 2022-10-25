@@ -5,10 +5,10 @@ function CardWButton(props) {
   const { height, borderRadius, content } = props
   return (
     <CardContainer style={{ height: height, borderRadius: borderRadius }} className="flex-center">
-      <Image layout="fill" src={content?.imageUrl} alt={content?.title} priority />
-      <div className="content">
+      <Image objectFit="cover" layout="fill" src={content?.imageUrl} alt={content?.title} priority />
+      <div className="content text-shadow">
         <h1><span>{content?.subTitle}</span><br></br>{content?.title}</h1>
-        <button className="mi-boton">{content?.buttonText || 'Butotn'}</button>
+        <button className="mi-boton">{content?.buttonText || 'Button'}</button>
       </div>
     </CardContainer>
   )
@@ -17,15 +17,12 @@ function CardWButton(props) {
 const CardContainer = styled.div`
       width: 100%;
       height: 20em;
-      border-radius: 12px;
       box-shadow: 1px 1px 1px black;
       overflow: hidden;
       position: relative;
       background: linear-gradient(to bottom, #0000004e, #00000067, #ffffff10);
-      img {
-        position: absolute;
-        object-fit: cover;
-        z-index: -1;
+      &:hover{
+        box-shadow: inset 1px 1px 3px black;
       }
       .content {
         width: 60%;
