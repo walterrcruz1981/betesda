@@ -51,9 +51,9 @@ function ChurchInfo({ content }) {
 }
 
 const InfoCardContainer = styled.div`
-margin: 2em 0;
+margin: 1em 0;
     .intro-container{
-        margin: 3em 0;
+        margin: 2em 0;
         padding: 1.2em;
         gap: 1.2em;
         .description{

@@ -4,8 +4,8 @@ import ChurchInfo from "./ChurchInfo";
 
 function IglesiasTemplate({ churchInfo }) {
     return (
-        <IglesiaTemplateContainer className="flex-center-column">
-            <h1>{churchInfo.nombreDeMision}</h1>
+        <IglesiaTemplateContainer>
+            <h1 className="title">{churchInfo.nombreDeMision}</h1>
             <MisionesSlideShow content={churchInfo} />
             <ChurchInfo content={churchInfo} />
         </IglesiaTemplateContainer>
@@ -14,6 +14,9 @@ function IglesiasTemplate({ churchInfo }) {
 
 const IglesiaTemplateContainer = styled.div`
     height: 100%;
+    .title{
+        text-align: center;
+    }
 `;
 
 export default IglesiasTemplate
