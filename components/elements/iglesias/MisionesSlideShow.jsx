@@ -27,7 +27,7 @@ function MisionesSlideShow({ content }) {
                 <SplideSlide className='slide flex'>
                     <div className="slide-text flex-center-column">
                         <h1>Visitanos Aquí</h1>
-                        <h4>{content.direccion}</h4>
+                        <h4>Direccion: {content.direccion}</h4>
                     </div>
                     <div className="image-container">
                         <Image layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80' alt='slide image'></Image>
@@ -45,7 +45,7 @@ width: 100%;
    .slide-text{
     z-index: 1;
     height: 20em;
-    width: 1100%;
+    width: 100%;
     color: white;
     background-color: #00000073;
     }
@@ -59,6 +59,7 @@ width: 100%;
 .slide{
     .slide-text{
         height: 10em;
+        padding: 1em;
     }
     .image-container{
         height: 22em;

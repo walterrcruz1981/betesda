@@ -122,7 +122,7 @@ margin: 2em 0;
             flex-direction: column-reverse;
             padding: 1em;
             .mapa{
-                width: 60%;
+                width: 100%;
             }
         }
     }
