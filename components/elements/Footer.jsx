@@ -9,16 +9,19 @@ import { useState } from 'react';
 
 const Footer = () => {
     return (
-        <FooterContainer className='flex-center'>
+        <FooterContainer className='flex-center-column'>
             <div className='logo'>
                 <Link href='/'><Image src={logo} alt='logo' /></Link>
             </div>
             <div className='nav-links flex-center'>
                 {navLinks.map((link, index) => (
-                    <Link key={index} href={link.href}><a className='active'>{link.name}</a></Link>
+                    <Link key={index} href={link.href}><a>{link.name}</a></Link>
                 ))}
             </div>
-            <SocialLinks />
+            <div>
+                <SocialLinks />
+            </div>
+
             <p className='copyright'>© 2022 Iglesia Ministerios Betesda</p>
         </FooterContainer>
     )
@@ -26,7 +29,6 @@ const Footer = () => {
 
 export default Footer
 const FooterContainer = styled.div`
-flex-direction: column;
 gap: 1em;
 overflow: hidden;
 background: #4d4d4f;

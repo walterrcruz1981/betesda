@@ -7,12 +7,13 @@ import Image from 'next/image'
 const SPLIDE_OPTIONS = {
     pagination: true,
     arrows: false,
+    interval: 8000,
     mediaQuery: 'min',
     rewind: true,
+    autoplay: true,
     video: {
         autoplay: false,
         mute: false,
-
         playerOptions: {
             youtube: {
 

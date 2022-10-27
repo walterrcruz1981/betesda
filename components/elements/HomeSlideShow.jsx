@@ -15,9 +15,9 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
                 {activeSlide ? <VideoSlideShow videos={videos} /> :
                     <Splide options={{
                         pagination: true,
-                        autoplay: false,
+                        autoplay: true,
                         arrows: false,
-                        interval: 10000,
+                        interval: 8000,
                         mediaQuery: 'min',
                         rewind: true
                     }}>
@@ -74,6 +74,7 @@ background-color: #000000;
     background-color: white;
     outline: 3px solid #2b72f7;
     margin: 1em;
+    transition: all 1s ease-in-out;
 }
 
 

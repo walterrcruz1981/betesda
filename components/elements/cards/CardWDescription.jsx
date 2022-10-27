@@ -4,7 +4,7 @@ import Image from 'next/image'
 function CardWDescription(prop) {
   const { height, borderRadius, content } = prop
   return (
-    <CardContainer style={{ height: height, borderRadius: borderRadius }} className="flex-center">
+    <CardContainer style={{ height: height, borderRadius: borderRadius }} className="flex-center text-shadow">
       <Image objectFit="cover" layout="fill" priority src={content?.imageUrl} alt={content?.title} />
       <div className="content">
         <h1><span>{content?.subtitle || ''}</span><br></br>{content?.title}</h1>
@@ -21,21 +21,28 @@ const CardContainer = styled.div`
       cursor: pointer;
       overflow: hidden;
       position: relative;
-      background: linear-gradient(to top, #00000050, #00000026, #ffffff10);
+      background: linear-gradient(to top, #00000050, #0000006c, #ffffff1f);
       &:hover{
         box-shadow: 1px 1px 3px black;
       }
       .content {
-        width: 60%;
+        width: 70%;
         row-gap: .4em;
         line-height: 1.4em;
         color: white;
         z-index: 1;
         p {
           color: white;
+          font-size: 1.2rem;
         }
         span {
           font-size: 1rem;
+        }
+      }
+      @media(max-width: 600px){
+        .content{
+          width: 90%;
+          line-height: 1.6rem;
         }
       }
 `;

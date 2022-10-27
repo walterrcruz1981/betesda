@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function SocialLinks() {
     return (
-        <SocialLinksContainer className="flex-center">
+        <SocialLinksContainer className="flex">
             {socialLinks.map(link => (
                 <Link key={link.link} href={link.link}><a>{link.icon}</a></Link>
             ))}
