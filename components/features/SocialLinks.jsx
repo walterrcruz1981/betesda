@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import Link from "next/link";
 import { socialLinks } from '../../public/assets/page-content/links'
-import { useState } from "react";
 
 function SocialLinks() {
     return (
