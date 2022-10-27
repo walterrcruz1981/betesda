@@ -11,7 +11,7 @@ function IglesiasTemplate({ churchInfo }) {
             <MisionesSlideShow content={churchInfo} />
             <ChurchInfo content={churchInfo} />
             <div className="whatsup-container">
-                <Link href='https://wa.me/50360134015'><a rel="noopener" target='_blank'><AiOutlineWhatsApp className="whatsup-icon" /></a></Link>
+                <Link href='https://wa.me/17148783335'><a rel="noopener" target='_blank'><AiOutlineWhatsApp className="whatsup-icon" /></a></Link>
 
             </div>
         </IglesiaTemplateContainer>
@@ -32,19 +32,20 @@ const IglesiaTemplateContainer = styled.div`
         border-radius: 50%;
         padding: .7em;
         box-shadow: 1px 1px 20px green;
-        animation: glow 2s ease-in-out infinite;
+        animation: glow 3s ease-in-out infinite;
         .whatsup-icon{
         font-size:5em;
         color: #ffffff;
-        
     }
     }
     @keyframes glow {
-  100% {
-    transform: scale(.9);
-    rotate: (18deg);
-    border-radius: 40%;
-    outline: 2px solid green;
+        30%{
+            rotate: 10deg;
+            background-color: #2fc96f;
+        };
+         100% {
+    transform: scale(.95);
+    rotate: -10deg;
   }
 }
 @media (max-width: 700px){
