@@ -1,6 +1,6 @@
 export const propositos = [
     {
-        title: 'Evangelización',
+        title: 'Misión',
         description: 'Nuestra iglesia comunica la Palabra de Dios a través del evangelismo. Somos embajadores de Cristo y creemos que es nuestra responsabilidad compartir las Buenas Nuevas dondequiera que vayamos. De hecho, el evangelismo es más que nuestra responsabilidad; es nuestro gran privilegio. Mientras haya una persona en el mundo que no conozca a Cristo, nuestra iglesia seguirá extendiendo la mano.',
         imageUrl: 'https://images.unsplash.com/photo-1621354898913-d3cec6b17162?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
     },
@@ -20,7 +20,7 @@ export const propositos = [
         imageUrl: 'https://images.unsplash.com/photo-1553729784-e91953dec042?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
     },
     {
-        title: 'Culto',
+        title: 'Adoración',
         description: 'Nuestra iglesia celebra la presencia de Dios en la adoración. No importa si estamos solos, con un grupo pequeño o con 100.000 personas; cada vez que expresamos nuestro amor a Dios, estamos adorando. Creemos que la adoración no debe ser un deber religioso. Adoramos a Dios porque queremos magnificar y exaltar su nombre.',
         imageUrl: 'https://images.unsplash.com/photo-1514286969571-5142af56b991?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
     },
