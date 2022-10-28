@@ -26,7 +26,8 @@ const IglesiaTemplateContainer = styled.div`
     .whatsup-container{
         position: fixed;
         right: .4em;
-        top: 60%;
+        top: 80%;
+        z-index: 1;
         background-color: green;
         display: inline-block;
         border-radius: 50%;
@@ -34,7 +35,7 @@ const IglesiaTemplateContainer = styled.div`
         box-shadow: 1px 1px 20px green;
         animation: glow 3s ease-in-out infinite;
         .whatsup-icon{
-        font-size:5em;
+        font-size:4em;
         color: #ffffff;
     }
     }
@@ -51,7 +52,7 @@ const IglesiaTemplateContainer = styled.div`
 @media (max-width: 700px){
     .whatsup-container{
         .whatsup-icon{
-        font-size: 3em;
+        font-size: 2.5em;
     }
     }
 }
