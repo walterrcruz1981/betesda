@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components"
 import Link from "next/link";
 import SocialLinks from "../../features/SocialLinks";
+import ContactInfo from "../ContactInfo";
 
 function ChurchInfo({ content }) {
     return (
@@ -33,19 +34,7 @@ function ChurchInfo({ content }) {
                 <h1>Contacto</h1>
                 <h3>Nos gustaria que nos visites pronto</h3>
             </div>
-            <div className="contact-container flex">
-                <div className="mapa">
-                    <iframe height='500px' width='100%' src={content.iframeSrc} allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div className="contact-text-content flex-column">
-                    <p><b>Servicio: </b>{content.servicios}</p>
-                    <p><b>Direccion: </b>{content.direccion}</p>
-                    <p><b>tel: </b>{content.cellPhone}</p>
-                    <p><b>Whatsapp: </b>{content.whatsup}</p>
-                    <p><b>Email: </b><Link href={`mailto:${content.email}`}><a>{content.email}</a></Link></p>
-                    <SocialLinks />
-                </div>
-            </div>
+            <ContactInfo content={content} />
         </InfoCardContainer>
     )
 }

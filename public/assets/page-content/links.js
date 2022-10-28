@@ -16,7 +16,11 @@ export const navLinks = [
     {
         name: 'Donaciones',
         href: '/donaciones'
-    }
+    },
+    {
+        name: 'Contacto',
+        href: '/contacto'
+    },
 ]
 
 

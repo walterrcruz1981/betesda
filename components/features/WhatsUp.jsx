@@ -1,26 +1,18 @@
 import styled from "styled-components"
+import Link from "next/link"
 import { AiOutlineWhatsApp } from 'react-icons/ai'
-import MisionesSlideShow from "./MisionesSlideShow";
-import ChurchInfo from "./ChurchInfo";
-import Link from "next/link";
-import WhatsUp from "../../features/WhatsUp";
 
-function IglesiasTemplate({ churchInfo }) {
+
+function WhatsUp({ href }) {
     return (
-        <IglesiaTemplateContainer>
-            <h1 className="title">{churchInfo.nombreDeMision}</h1>
-            <MisionesSlideShow content={churchInfo} />
-            <ChurchInfo content={churchInfo} />
-            <WhatsUp href={churchInfo.whatsupUrl} />
-        </IglesiaTemplateContainer>
+        <WhatsUpContainer>
+            <div className="whatsup-container">
+                <Link href={href}><a rel="noopener" target='_blank'><AiOutlineWhatsApp className="whatsup-icon" /></a></Link>
+            </div>
+        </WhatsUpContainer>
     )
 }
-
-const IglesiaTemplateContainer = styled.div`
-    height: 100%;
-    .title{
-        text-align: center;
-    }
+const WhatsUpContainer = styled.div`
     .whatsup-container{
         position: fixed;
         right: .4em;
@@ -56,4 +48,4 @@ const IglesiaTemplateContainer = styled.div`
 }
 `;
 
-export default IglesiasTemplate
+export default WhatsUp

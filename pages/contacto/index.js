@@ -1,20 +1,67 @@
 import styled from 'styled-components'
 import React from 'react'
+import { betesdaCentral, misionElSalvadorInfo } from '../../public/assets/page-content/misiones'
+import ContactInfo from '../../components/elements/ContactInfo'
+import Image from 'next/image'
+import WhatsUp from '../../components/features/WhatsUp'
 
 const Contact = () => {
     return (
-        <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.4782132045666!2d-117.87823343188164!3d33.748306355718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd900764c93d1%3A0xd2327330903b5898!2s888%20W%20Santa%20Ana%20Blvd%2C%20Santa%20Ana%2C%20CA%2092701!5e0!3m2!1sen!2sus!4v1666445425658!5m2!1sen!2sus" width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-        </div>
-
-
+        <ContactContainer>
+            <div className="title text-shadow">
+                <h1>Ministerios Betesda<br></br> Contacto</h1>
+            </div>
+            <div className="image">
+                <Image src='https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' alt='top image' layout='fill' objectFit='cover'></Image>
+            </div>
+            <div className="contact-info">
+                <ContactInfo content={betesdaCentral} />
+                <hr />
+                <ContactInfo content={misionElSalvadorInfo} />
+            </div>
+            <WhatsUp href={betesdaCentral.whatsupUrl} />
+        </ContactContainer>
     )
-
 }
 
 export default Contact
-
 const ContactContainer = styled.div`
+    .image{
+        height: 50vh;
+        position: relative;
+        z-index: -11;
+    }
+    .title{
+        position: fixed;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 4em;
+        font-size: 4em;
+        line-height: 1.5em;
+        z-index: -1;
+        text-align: center;
+        color: #d6dff0;
+    }
 
+    .contact-info{
+        margin-top: 12em;
+        z-index: 90;
+        background-color: white;
+    }
+    @media (max-width: 860px){
+        .image{
+            height: 30vh;
+        }
+        .title{
+            top: 5em;
+            font-size: 1.8em;
+            width: 50%;
+            padding: 0 .5em;
+        }
+        .contact-info{
+            margin-top: 5em;
+        }
+
+    }
 `;
