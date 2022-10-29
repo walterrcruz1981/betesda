@@ -19,7 +19,7 @@ export const betesdaCentral = {
 export const misionElSalvadorInfo = {
     imageUrl: image1,
     nombreDeMision: 'Betesda El Salvador',
-    direccion: '3av sur / 9a y 11a calle oye. # 40 -A, Santa Ana, El Salvador',
+    direccion: '3av sur / 9a y 11a calle ote. # 40 -A, Santa Ana, El Salvador',
     servicios: 'Jueves 6:00 - 7:30 PM. y Domingo 10:00 am. - 12:00 md.',
     cellPhone: '+503 75107284, +503 79109235',
     email: 'mike@betesda.org',

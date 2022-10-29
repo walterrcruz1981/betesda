@@ -1,5 +1,5 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
+import '@splidejs/splide/css/skyblue';
 import Image from 'next/image';
 import styled from 'styled-components';
 
@@ -16,6 +16,15 @@ function MisionesSlideShow({ content }) {
             }}>
                 <SplideSlide className='slide flex'>
                     <div className="slide-text flex-center-column">
+                        <h1>Bienvenido a {content.nombreDeMision}</h1>
+                        <h4>Nos alegra mucho que estes aquí</h4>
+                    </div>
+                    <div className="image-container">
+                        <Image layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80' alt='slide image'></Image>
+                    </div>
+                </SplideSlide>
+                <SplideSlide className='slide flex'>
+                    <div className="slide-text flex-center-column">
                         <h1>Hora de Servicio</h1>
                         <h4>{content.servicios}</h4>
                     </div>
@@ -26,7 +35,7 @@ function MisionesSlideShow({ content }) {
                 </SplideSlide>
                 <SplideSlide className='slide flex'>
                     <div className="slide-text flex-center-column">
-                        <h1>Visitanos Aquí</h1>
+                        <h1>Visitanos Aquí <span></span></h1>
                         <h4>Direccion: {content.direccion}</h4>
                     </div>
                     <div className="image-container">
@@ -39,15 +48,19 @@ function MisionesSlideShow({ content }) {
 }
 const SlideContainer = styled.div`
 width: 100%;
+padding-bottom: 2em;
+background-color: #ffffff;
 .slide{
     align-items: flex-end;
-    padding-bottom: 2.8em;
    .slide-text{
-    z-index: 1;
+    line-height: 1.5em;
+    h1{
+        font-size: 2em;
+    }
     height: 20em;
     width: 100%;
     color: white;
-    background-color: #00000073;
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0));
     }
     .image-container{
     height: 40em;
@@ -58,11 +71,11 @@ width: 100%;
 @media (max-width: 700px){
 .slide{
     .slide-text{
-        height: 10em;
+        height: 15em;
         padding: 1em;
     }
     .image-container{
-        height: 22em;
+        height: 25em;
     }
 }
 }
