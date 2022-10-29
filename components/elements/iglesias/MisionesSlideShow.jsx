@@ -3,7 +3,7 @@ import '@splidejs/splide/css/skyblue';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-function MisionesSlideShow({ content }) {
+function MisionesSlideShow({ slideContent, content }) {
     return (
         <SlideContainer>
             <Splide options={{
@@ -23,25 +23,21 @@ function MisionesSlideShow({ content }) {
                         <Image layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80' alt='slide image'></Image>
                     </div>
                 </SplideSlide>
-                <SplideSlide className='slide flex'>
-                    <div className="slide-text flex-center-column">
-                        <h1>Hora de Servicio</h1>
-                        <h4>{content.servicios}</h4>
-                    </div>
-                    <div className="image-container">
-                        <Image layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80' alt='slide image'></Image>
+                {slideContent?.map((slide, index) => {
+                    const { Title, Description, Attachments = [] } = slide.fields;
+                    const { thumbnails = {} } = Attachments[0]
+                    const { url } = thumbnails.large
+                    return <SplideSlide key={index} className='slide flex'>
+                        <div className="slide-text flex-center-column">
+                            <h1>{Title}</h1>
+                            <h4>{Description}</h4>
+                        </div>
+                        <div className="image-container">
+                            <Image layout='fill' objectFit='cover' src={url} alt={Title}></Image>
+                        </div>
+                    </SplideSlide>
+                })}
 
-                    </div>
-                </SplideSlide>
-                <SplideSlide className='slide flex'>
-                    <div className="slide-text flex-center-column">
-                        <h1>Visitanos Aquí <span></span></h1>
-                        <h4>Direccion: {content.direccion}</h4>
-                    </div>
-                    <div className="image-container">
-                        <Image layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80' alt='slide image'></Image>
-                    </div>
-                </SplideSlide>
             </Splide>
         </SlideContainer>
     )

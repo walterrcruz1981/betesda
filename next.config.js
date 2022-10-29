@@ -7,7 +7,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['images.unsplash.com', 'i.ytimg.com', 'images.ctfassets.net']
+    domains: ['images.unsplash.com', 'i.ytimg.com', 'images.ctfassets.net', 'dl.airtable.com']
   },
 }
 

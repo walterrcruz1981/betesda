@@ -137,7 +137,31 @@ position: relative;
                 width: 100%;
             }
         }
-        @media (max-width: 1000px){
+  @media (max-width: 1200px){
+        .parallax-container{
+            .mision{
+                top: 65%;
+                width: 90%;
+            }
+            .vision{
+                width: 90%;
+                top:37%;
+            }
+        }
+    }
+  @media (max-width: 1300px){
+        .parallax-container{
+            .mision{
+                top: 66%;
+                width: 80%;
+            }
+            .vision{
+                width: 80%;
+                top:42%;
+            }
+        }
+    }
+ @media (max-width: 1000px){
         .parallax-container{
         .mision{
             width: 90%;
@@ -193,7 +217,17 @@ position: relative;
     @media (max-width: 600px){
         .parallax-container{
             .mision{
-                top: 40%;
+                top: 50%;
+            }
+            .vision{
+                top: 25%;
+            }
+        }
+    }
+    @media (max-width: 300px){
+        .parallax-container{
+            .mision{
+                top: 60%;
             }
             .vision{
                 top: 25%;
