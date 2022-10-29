@@ -18,7 +18,7 @@ function ChurchInfo({ content }) {
             </div>
             <div className="parallax-container">
                 <div className="fixed-image">
-                    <Image objectFit="cover" layout="fill" src='https://images.unsplash.com/photo-1533000971552-6a962ff0b9f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80' alt="info image" />
+                    <Image objectFit="cover" layout="fill" src='https://images.unsplash.com/photo-1481142889578-dda440dacfe1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' alt="info image" />
                 </div>
                 <div className="mision flex-center-column text-space text-shadow">
                     <h1>Misión</h1>
