@@ -26,16 +26,8 @@ function Somos() {
     ]
     return (
         <SomosContainer>
-            <div className={!openLink ? "side-link close-side-link" : 'side-link'}>
-                <h5>Mas Informacion</h5>
-                <hr></hr>
-                {moreInfoSideLink.map(item => {
-                    return <Link key={item.id} href={item.href}><a>{item.title}<br></br></a></Link>
-                })}
-                <h2 onClick={() => setOpenLink(!openLink)} className={openLink ? '' : 'close-button '}>{openLink ? <a>X</a> : 'lll'}</h2>
-            </div>
-            <div className="hero flex-center-column text-shadow relative">
 
+            <div className="hero flex-center-column text-shadow relative">
                 <h1><span>Bienvenido</span><br></br>A Ministerios Betesda</h1>
                 <Image priority className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='somos image' />
                 <button onClick={() => setOpenModal(true)}>Ver Video</button>
@@ -68,12 +60,20 @@ function Somos() {
             {multiTab === 0 ? <ManyTabInfo tabContent={propositosUnicos}></ManyTabInfo> : null
                 || multiTab === 1 ? <ManyTabInfo tabContent={valores}></ManyTabInfo> : null
                     || multiTab === 2 ? <ManyTabInfo tabContent={declaracion}></ManyTabInfo> : null}
+            <div className={!openLink ? "side-link close-side-link" : 'side-link'}>
+                <h5>Mas Informacion</h5>
+                <hr></hr>
+                {moreInfoSideLink.map(item => {
+                    return <Link key={item.id} href={item.href}><a>{item.title}<br></br></a></Link>
+                })}
+                <h2 onClick={() => setOpenLink(!openLink)} className={openLink ? '' : 'close-button '}>{openLink ? <a>X</a> : 'lll'}</h2>
+            </div>
         </SomosContainer>
     )
 }
 
 const SomosContainer = styled.div`
-
+position: relative;
     .side-link{
         position: fixed;
         right: 0;
@@ -93,7 +93,7 @@ const SomosContainer = styled.div`
         }
         .close-button{
             position: absolute;
-            left: 1em;
+            left: .5em;
             bottom: 30%;
             cursor: pointer;
         }
@@ -109,6 +109,7 @@ const SomosContainer = styled.div`
         }
     .hero {
         padding: 1em;
+        background-color: #034a9ba4;
         position: relative;
         height: 35em;
         color: white;
@@ -120,7 +121,7 @@ const SomosContainer = styled.div`
         }
         img{
             z-index: -1;
-            filter: blur(.5em);
+            filter: blur(.1em);
             opacity: .5;
         }
 
@@ -207,9 +208,8 @@ const SomosContainer = styled.div`
 
     @media (max-width: 800px) {
         .side-link{
-            display: none;
-        }
-
+       display: none;
+    }
         .hero{
             height: 25em;
             h1 {
@@ -218,8 +218,7 @@ const SomosContainer = styled.div`
         }
         .fancy-accordion{
             height: 100%;
-            .container {
-                
+            .container {                
                 width: 100%;
                 height: 100%;
                 border-radius: 0;
