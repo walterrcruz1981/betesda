@@ -107,6 +107,7 @@ const VideoSlideShowContainer = styled.div`
         object-fit: cover;
     }
     }
+
    }
 `;
 export default VideoSlideShow

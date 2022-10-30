@@ -123,7 +123,7 @@ span {
         }
         h1 {
         color: #fff;
-        font-size: 1.1rem;
+        font-size: 2.8rem;
     }
 
     span {
