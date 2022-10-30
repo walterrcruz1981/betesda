@@ -7,8 +7,9 @@ import { useState } from 'react';
 import Image from 'next/image'
 
 function HomeSlideShow({ anuncios, videos, slideShow }) {
+
     console.log(anuncios)
-    const [activeSlide, setActiveSlide] = useState(false)
+    const [activeSlide, setActiveSlide] = useState(true)
     return (
         <>
             <SlideShowContainer>
@@ -39,7 +40,7 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
 
 
                 <div onClick={() => setActiveSlide(!activeSlide)} className="more-video-container">
-                    <a className='more-videos text-shadow'>{activeSlide ? 'Ver Anuncios' : 'Ver Sermones'}</a>
+                    <a className='more-videos text-shadow'>{!activeSlide ? 'Ver Intro' : 'Ver Anuncios'}</a>
                 </div>
             </SlideShowContainer>
         </>
@@ -88,6 +89,11 @@ flex-direction: column;
 justify-content: flex-end;
 row-gap: 1.5em;
 padding-bottom: 10rem;
+.video{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 
 h1 {
     padding-left: 1em;

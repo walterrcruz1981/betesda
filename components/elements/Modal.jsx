@@ -1,13 +1,16 @@
+import Script from 'next/script'
 import React from 'react'
 import styled from 'styled-components'
 
 const Modal = ({ open, closeModal }) => {
+    <Script src="https://player.vimeo.com/api/player.js"></Script>
+
     if (!open) return null
     return (
         <ModalContainer onClick={closeModal} className='flex-center'>
             <div onClick={(e) => e.stopPropagation()} className="modal-content">
                 <div onClick={closeModal} className="close">X</div>
-                <iframe height='100%' width='100%' src="https://www.youtube.com/embed/Jz_LbGdyx20" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe width='100%' height='100%' src="https://player.vimeo.com/video/765420231?h=0e9904f6ab&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="Bienvenidos a casa.mov"></iframe>
             </div>
         </ModalContainer>
     )
