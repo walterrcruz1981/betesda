@@ -3,25 +3,43 @@ import '@splidejs/react-splide/css';
 import styled from 'styled-components';
 import Link from 'next/link'
 import VideoSlideShow from './VideoSlideShow';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image'
+import Modal from './Modal';
 
 function HomeSlideShow({ anuncios, videos, slideShow }) {
-
-    console.log(anuncios)
+    const videoUrl = 'https://dih6tqxrn8ffv.cloudfront.net/bienvenida.mov'
+    const videoPoster = 'https://images.unsplash.com/photo-1595206133361-b1fe343e5e23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
     const [activeSlide, setActiveSlide] = useState(true)
+    const [isPlaying, setIsPlaying] = useState(false)
+    const playVideo = new useRef()
+    const videoControls = isPlaying ? 'controls' : null;
     return (
         <>
             <SlideShowContainer>
-                {activeSlide ? <VideoSlideShow videos={videos} /> :
+                {activeSlide ? <VideoContainer>
+
+                    {!isPlaying
+                        ? <div className="poster-image">
+                            <Image layout='fill' objectFit='cover' src={videoPoster}></Image>
+                            <button onClick={() => {
+                                setIsPlaying(true)
+                            }}>Ver Video</button>
+                        </div>
+                        : <div className="video-container">
+
+                            <video controls autoPlay objectFit='cover' poster={videoPoster} ref={playVideo} src={videoUrl}></video>
+                        </div>
+                    }
+                </ VideoContainer> :
                     <Splide options={{
                         pagination: true,
-                        autoplay: true,
+                        autoplay: false,
                         arrows: false,
-                        interval: 8000,
                         mediaQuery: 'min',
                         rewind: true
                     }}>
+
                         {anuncios.items?.map(slide => {
                             const { buttonLink = [], buttonText, title, subTitle, image = {} } = slide.fields
                             const { url } = image.fields.file
@@ -78,7 +96,6 @@ background-color: #000000;
     transition: all 1s ease-in-out;
 }
 
-
 .slide-style {
 width: 100%;
 height:44em;
@@ -89,11 +106,6 @@ flex-direction: column;
 justify-content: flex-end;
 row-gap: 1.5em;
 padding-bottom: 10rem;
-.video{
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
 
 h1 {
     padding-left: 1em;
@@ -139,6 +151,36 @@ span {
 }
 }
 
+`;
+const VideoContainer = styled.div`
+position: relative;
+    .poster-image{
+        height: 44em;
+        button{
+            position: absolute;
+            top: 90%;
+            left: 50%;
+        }
+    }
+
+    .video-container{
+        height: 44em;
+
+        video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    @media(max-width: 800px){
+        .content{
+            height: 30em;
+            padding: 1em;
+        }
+        .video-container{
+            height: 30em;
+        }
+    }
 `;
 
 

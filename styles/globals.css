@@ -98,6 +98,13 @@ button:hover {
   flex-direction: column;
 }
 
+.flex-column-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
 .flex-reverse {
   flex-direction: row-reverse;
   text-align: right;

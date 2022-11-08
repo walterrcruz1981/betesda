@@ -8,6 +8,10 @@ import { propositosUnicos, valores, declaracion } from '../../public/assets/page
 import Link from 'next/link';
 
 function Somos() {
+    const videoInfo = {
+        videoUrl: 'Bienvenidos a casa.mov',
+        posterImage: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
+    }
     const [selected, setSelected] = useState(0)
     const [openModal, setOpenModal] = useState(false)
     const [openLink, setOpenLink] = useState(false)
@@ -22,17 +26,15 @@ function Somos() {
         { title: 'Grupos Pequeños', href: '/conectate/grupos', id: '1' },
         { title: 'Clases', href: '/conectate/clases', id: '2' },
         { title: 'Contacto', href: '/contacto', id: '3' },
-
     ]
     return (
         <SomosContainer>
-
             <div className="hero flex-center-column text-shadow relative">
                 <h1><span>Bienvenido</span><br></br>A Ministerios Betesda</h1>
                 <Image priority className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='somos image' />
                 <button onClick={() => setOpenModal(true)}>Ver Video</button>
             </div>
-            <Modal open={openModal} closeModal={() => setOpenModal(false)} />
+            <Modal videoInfo={videoInfo} open={openModal} closeModal={() => setOpenModal(false)} />
             <div className="fancy-accordion flex-center-column">
                 <h1 className="header">Somos Iglesia Con Proposito</h1>
                 <Image priority className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='somos' />

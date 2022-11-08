@@ -4,6 +4,9 @@ import "@splidejs/splide-extension-video/dist/css/splide-extension-video.min.css
 import styled from "styled-components";
 import Image from 'next/image'
 
+const domain = 'https://dih6tqxrn8ffv.cloudfront.net'
+const video1 = 'bienvenida.mov'
+
 const SPLIDE_OPTIONS = {
     pagination: true,
     arrows: false,
@@ -16,30 +19,30 @@ const SPLIDE_OPTIONS = {
         mute: false,
         playerOptions: {
             youtube: {
-
-            }
+            },
         }
     }
 };
 
 function VideoSlideShow({ videos }) {
-    console.log(videos);
     return (
         <VideoSlideShowContainer>
             <Splide
                 options={SPLIDE_OPTIONS}
                 extensions={{ Video }}>
-                <li className="splide__slide" data-splide-vimeo='https://vimeo.com/765420614'>
+                <li className="splide__slide" data-video='https://www.w3schools.com/html/mov_bbb.mp4'>
                     <div className="splide__slide__container">
                         <div className="video-image">
                             <Image layout='fill' objectFit="cover" className="image" src='https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80' alt='welcome image' />
                             <div className="welcome-content text-space text-shadow">
                                 <h1 className="text-shadow">Bienvenido a Ministerios Betesda</h1>
+                                <button>Ver Video</button>
                             </div>
                         </div>
                     </div>
 
                 </li>
+
                 {/* {videos?.map(video => {
                     const { title, videoUrl, posterImage = {} } = video.fields
                     const { file, title: imageTitle } = posterImage.fields
@@ -78,7 +81,6 @@ const VideoSlideShowContainer = styled.div`
         font-size: 2.3em;
         color: white;
     }
-
    .splide__slide {
     width: 100%;
     height: 45em;
@@ -88,7 +90,6 @@ const VideoSlideShowContainer = styled.div`
         object-fit: cover;
     }
    }
-
    .splide__video__play {
     height: 6em;
     width: 5em;
@@ -107,7 +108,6 @@ const VideoSlideShowContainer = styled.div`
         object-fit: cover;
     }
     }
-
    }
 `;
 export default VideoSlideShow

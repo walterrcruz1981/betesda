@@ -9,6 +9,7 @@ import { createClient } from "contentful";
 import { useEffect, useState } from "react";
 import liveIcon from '../public/assets/images/live.png'
 import Image from "next/image";
+import Modal from "../components/elements/Modal";
 
 const youtubeApiUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8br10Qoo5bZvTKiJhPkdOA&eventType=live&order=date&type=video&key='
 
@@ -34,10 +35,15 @@ export async function getStaticProps() {
 }
 
 export default function Home({ videos, anuncios, data }) {
+  const videoInfo = {
+    videoUrl: 'Lo Que Jesus Vino Hacer - Nueva Serie.mov',
+    posterImage: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
+  }
   const [isLive, setIsLive] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
   const [videoId, setVideoId] = useState([])
   function checkLiveStatus(check) {
-    if (check.pageInfo.totalResults !== 0) setIsLive(true)
+    if (check.pageInfo.totalResults !== 0) setIsLive(false)
     else return
     const { id } = check.items[0]
     setVideoId(id.videoId)
@@ -67,13 +73,19 @@ export default function Home({ videos, anuncios, data }) {
     </div>
     <div className="container flex">
       <div className="cards-container">
-        <Link href={content.sermonSemanal.buttonLink}><a><CardWButton content={content.sermonSemanal} borderRadius='10px' height='20em' /></a></Link>
+        <div className="nueva-serie flex-center-column">
+          <h1>Serie Actual:</h1>
+          <Image layout="fill" objectFit="cover" alt="nueva serie image" src={videoInfo.posterImage}></Image>
+          <button onClick={() => setOpenModal(true)}>Ver Video</button>
+        </div>
+        <Modal videoInfo={videoInfo} open={openModal} closeModal={() => setOpenModal(false)} />
         <div className="links flex">
           <p><span><strong>Involucrate</strong></span><br></br>¿Que puede hacer Dios Con Ud?</p>
           <Link href="/donaciones" ><a className="link">Donaciones</a></Link>
           <Link href="/conectate/servir" ><a className="link">Voluntario</a></Link>
           <Link href="/conectate/clases" ><a className="link">Clases</a></Link>
           <Link href="/contacto" ><a className="link">Contacto</a></Link>
+          <Link href="/sermones" ><a className="link">Sermones</a></Link>
           <Link href="https://www.facebook.com/MercyHouseBetesda" ><a className="link">Mercy House</a></Link>
         </div>
       </div>
@@ -104,13 +116,20 @@ const HomeContainer = styled.div`
 }
 
 @keyframes spin {
+  0% {transform: scale(1)}
+  50% {transform: scale(1.2);}
   100% {
-    transform: scale(1.2);
+    transform: scale(1);
   }
 }
 
 .live-video{
   height: 44em;
+  width: 100%;
+  iframe{
+    height: 45em;
+    width: 100%;
+  }
 }
 .container {
   flex-direction: column;
@@ -149,6 +168,17 @@ const HomeContainer = styled.div`
         line-height: .9em;
         border-bottom: 1px solid  #acacaca7;
         padding: .4em;
+      }
+    }
+    .nueva-serie{
+      width: 100%;
+      height: 22em;
+      position: relative;
+      border-radius: 1em;
+      overflow: hidden;
+      h1{
+        z-index: 1;
+        color: white;
       }
     }
   }
