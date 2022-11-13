@@ -37,7 +37,7 @@ export async function getStaticProps() {
 export default function Home({ videos, anuncios, data }) {
   const videoInfo = {
     videoUrl: 'Lo Que Jesus Vino Hacer - Nueva Serie.mov',
-    posterImage: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
+    posterImage: 'https://images.unsplash.com/photo-1491396023581-4344e51fec5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80'
   }
   const [isLive, setIsLive] = useState(false)
   const [openModal, setOpenModal] = useState(false)

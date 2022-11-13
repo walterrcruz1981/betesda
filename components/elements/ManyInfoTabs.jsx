@@ -37,7 +37,7 @@ flex-direction: column;
    font-weight: 900;
 }
 .title {
-   color: #0f0f0f;
+   color: #103a52;
    padding: 1em 1em;
    margin: 2px;
    font-size: 1em;

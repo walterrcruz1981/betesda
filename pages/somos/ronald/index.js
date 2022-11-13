@@ -35,7 +35,7 @@ line-height: 2.2em;
 letter-spacing: 1px;
 .hero{
     background: linear-gradient(to right, #56bcff, #ffffff, #546ae9);
-    height: 35em;
+    height: 38em;
     width: 100%;
     margin-bottom: 3em;
     align-items: flex-end;
@@ -43,12 +43,12 @@ letter-spacing: 1px;
     position: relative;
     .hero-content{
         position: absolute;
-        bottom: -1em;
+        bottom: -1.8em;
         width: 80%;
         background-color: #141d2b;
         height: 30em;
         gap: 1.2em;
-        box-shadow: 1px 1px 50px rgba(0,0,0, .3);
+        box-shadow: 1px 10px 30px rgba(0,0,0, .3);
         color: white;
         .hero-image{
         flex: 1;
@@ -74,9 +74,16 @@ letter-spacing: 1px;
     width: 100%;
     padding: 1em;
     .inner-image{
-        position: relative;
+        position: inherit;
         float: left;
         margin-right: 1em;
+        width: 20em;
+    }
+    .inner-image2{
+        position: relative;
+        float: right;
+        margin-right: 1em;
+        width: 20em;
     }
 }
 

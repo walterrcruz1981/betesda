@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Modal from '../../components/elements/Modal';
-import ManyTabInfo from '../../components/elements/ManyInfoTabs'
+import ManyInfoTabs from '../../components/elements/ManyInfoTabs'
 import { propositos } from '../../public/assets/page-content/propositos'
 import { propositosUnicos, valores, declaracion } from '../../public/assets/page-content/somosContent'
 import Link from 'next/link';
@@ -59,9 +59,9 @@ function Somos() {
                 })}
             </div>
 
-            {multiTab === 0 ? <ManyTabInfo tabContent={propositosUnicos}></ManyTabInfo> : null
-                || multiTab === 1 ? <ManyTabInfo tabContent={valores}></ManyTabInfo> : null
-                    || multiTab === 2 ? <ManyTabInfo tabContent={declaracion}></ManyTabInfo> : null}
+            {multiTab === 0 ? <ManyInfoTabs tabContent={propositosUnicos}></ManyInfoTabs> : null
+                || multiTab === 1 ? <ManyInfoTabs tabContent={valores}></ManyInfoTabs> : null
+                    || multiTab === 2 ? <ManyInfoTabs tabContent={declaracion}></ManyInfoTabs> : null}
             <div className={!openLink ? "side-link close-side-link" : 'side-link'}>
                 <h5>Mas Informacion</h5>
                 <hr></hr>
@@ -187,7 +187,7 @@ position: relative;
         width: auto;
         margin: 2em;
         gap: 1em;
-        transition: all 1s;
+        transition: all 500ms;
         justify-content: space-evenly;
         button{
             background-color: aliceblue;
@@ -201,9 +201,11 @@ position: relative;
             }
         }
         .active-tab{
-            background-color: #5b5b7c;
-
+            background-color: #3d88cf;
             color: white;
+            &:hover{
+                background-color: #bee2ff;
+            }
         }
 
     }

@@ -9,11 +9,10 @@ import Modal from './Modal';
 
 function HomeSlideShow({ anuncios, videos, slideShow }) {
     const videoUrl = 'https://dih6tqxrn8ffv.cloudfront.net/bienvenida.mov'
-    const videoPoster = 'https://images.unsplash.com/photo-1595206133361-b1fe343e5e23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+    const videoPoster = 'https://images.unsplash.com/photo-1515162305285-0293e4767cc2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80'
     const [activeSlide, setActiveSlide] = useState(true)
     const [isPlaying, setIsPlaying] = useState(false)
     const playVideo = new useRef()
-    const videoControls = isPlaying ? 'controls' : null;
     return (
         <>
             <SlideShowContainer>
@@ -21,13 +20,14 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
 
                     {!isPlaying
                         ? <div className="poster-image">
+                            <h1 className='text-shadow'>Ministerios Betesda</h1>
                             <Image layout='fill' objectFit='cover' src={videoPoster}></Image>
-                            <button onClick={() => {
+                            <button onClick={(e) => {
+                                e.stopPropagation()
                                 setIsPlaying(true)
                             }}>Ver Video</button>
                         </div>
                         : <div className="video-container">
-
                             <video controls autoPlay poster={videoPoster} ref={playVideo} src={videoUrl}></video>
                         </div>
                     }
@@ -155,11 +155,21 @@ span {
 const VideoContainer = styled.div`
 position: relative;
     .poster-image{
+        h1{
+            position: absolute;
+            width: 100%;
+            top: 30%;
+            text-align: center;
+            z-index: 1;
+            font-size: 3.4rem;
+            color: white;
+        }
         height: 44em;
         button{
             position: absolute;
             top: 80%;
             left: 50%;
+            transform: translate(-50%);
         }
     }
 
