@@ -59,7 +59,7 @@ position: relative;
         position: relative;
         flex-grow: 1;
         width: 100%;
-        height: 25em;
+        height:45vh;
     }
     }
     .parallax-container{
@@ -69,9 +69,9 @@ position: relative;
          position: fixed;
         display: inline-block;
         width: 90em;
-        height: 30em;
+        height: 100%;
         margin: 0 auto;
-        top: 40%;
+        top: 20%;
         left: 0;
         right: 0;
         padding: 2em;
@@ -84,7 +84,8 @@ position: relative;
         .mision{
         position: fixed;
         display: inline-block;
-        top: 40%;
+        height: 100%;
+        top: 25%;
         width: 50%;
         margin: 0 auto;
         left: 0;
@@ -137,42 +138,18 @@ position: relative;
                 width: 100%;
             }
         }
-  @media (max-width: 1200px){
-        .parallax-container{
-            .mision{
-                top: 65%;
-                width: 90%;
-            }
-            .vision{
-                width: 90%;
-                top:37%;
-            }
-        }
-    }
   @media (max-width: 1300px){
         .parallax-container{
             .mision{
-                top: 66%;
-                width: 80%;
+                top: 35%;
+                width: 90%;
             }
             .vision{
-                width: 80%;
-                top:42%;
+                width: 90%;
+                top:60%;
             }
         }
     }
- @media (max-width: 1000px){
-        .parallax-container{
-        .mision{
-            width: 90%;
-            top: 58%;
-        }
-        .vision{
-            top: 43%;
-            width: 90%;
-        }
-    }
-}
 
     @media (max-width: 860px){
         .intro-container{
@@ -188,14 +165,14 @@ position: relative;
                 top: 25%;
             }
             .mision{
-                top: 47%;
+                top: 35%;
                 width: 90%;
                 p{
                     font-size: 1em;
                 }
             }
             .vision{
-                top: 33%;
+                top: 55%;
                 width: 90%;
                 p{
                     font-size: 1em;
@@ -216,21 +193,30 @@ position: relative;
     }
     @media (max-width: 600px){
         .parallax-container{
+            .fixed-image{
+                top: 20%;
+            }
             .mision{
-                top: 50%;
+                top: 20%;
+                p{
+                    font-size: .8rem;
+                }
             }
             .vision{
-                top: 25%;
+                top: 52%;
+                p{
+                    font-size: .8rem;
+                }
             }
         }
     }
     @media (max-width: 300px){
         .parallax-container{
             .mision{
-                top: 60%;
+                top: 20%;
             }
             .vision{
-                top: 25%;
+                top: 55%;
             }
         }
     }

@@ -41,6 +41,7 @@ const NavBar = () => {
 export default NavBar
 
 const NavBarContainer = styled.div`
+background-color: white;
 overflow: hidden;
 height: 4em;
 justify-content: space-between;

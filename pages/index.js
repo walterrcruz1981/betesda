@@ -73,7 +73,7 @@ export default function Home({ videos, anuncios, data }) {
     </div>
     <div className="container flex">
       <div className="cards-container">
-        <div className="nueva-serie flex-center-column">
+        <div className="nueva-serie flex-center-column text-shadow">
           <h1>Serie Actual:</h1>
           <Image layout="fill" objectFit="cover" alt="nueva serie image" src={videoInfo.posterImage}></Image>
           <button onClick={() => setOpenModal(true)}>Ver Video</button>

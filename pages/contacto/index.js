@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
-import { betesdaCentral, misionElSalvadorInfo } from '../../public/assets/page-content/misiones'
+import { betesdaCentral, misionElSalvadorInfo, salinasCruz, tejuantepecOaxaca } from '../../public/assets/page-content/misiones'
 import ContactInfo from '../../components/elements/ContactInfo'
 import Image from 'next/image'
 import WhatsUp from '../../components/features/WhatsUp'
@@ -18,6 +18,10 @@ const Contact = () => {
                 <ContactInfo content={betesdaCentral} />
                 <hr />
                 <ContactInfo content={misionElSalvadorInfo} />
+                <hr></hr>
+                <ContactInfo content={salinasCruz} />
+                <hr></hr>
+                <ContactInfo content={tejuantepecOaxaca} />
             </div>
             <WhatsUp href={betesdaCentral.whatsupUrl} />
         </ContactContainer>

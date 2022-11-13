@@ -28,7 +28,7 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
                         </div>
                         : <div className="video-container">
 
-                            <video controls autoPlay objectFit='cover' poster={videoPoster} ref={playVideo} src={videoUrl}></video>
+                            <video controls autoPlay poster={videoPoster} ref={playVideo} src={videoUrl}></video>
                         </div>
                     }
                 </ VideoContainer> :
@@ -158,7 +158,7 @@ position: relative;
         height: 44em;
         button{
             position: absolute;
-            top: 90%;
+            top: 80%;
             left: 50%;
         }
     }
@@ -173,6 +173,9 @@ position: relative;
         }
     }
     @media(max-width: 800px){
+        .poster-image{
+            height: 30em;
+        }
         .content{
             height: 30em;
             padding: 1em;
