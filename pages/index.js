@@ -43,7 +43,7 @@ export default function Home({ videos, anuncios, data }) {
   const [openModal, setOpenModal] = useState(false)
   const [videoId, setVideoId] = useState([])
   function checkLiveStatus(check) {
-    if (check.pageInfo.totalResults !== 0) setIsLive(false)
+    if (check.pageInfo.totalResults !== 0) setIsLive(true)
     else return
     const { id } = check.items[0]
     setVideoId(id.videoId)

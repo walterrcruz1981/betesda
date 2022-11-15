@@ -100,8 +100,8 @@ button:hover {
 
 .flex-column-start {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: center;
   flex-direction: column;
 }
 
