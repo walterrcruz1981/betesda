@@ -25,12 +25,12 @@ function media() {
                 <div className="card flex-center-column text-shadow box-shadow">
                     <h1>Visión</h1>
                     <p>{Media.vision}</p>
-                    <Image layout="fill" objectFit="cover" src={visionImage} alt='transmission en vivo'></Image>
+                    <Image layout="fill" src={visionImage} alt='transmission en vivo'></Image>
                 </div>
                 <div className="card flex-center-column box-shadow">
                     <h1>Misión</h1>
                     <p>{Media.mision}</p>
-                    <Image layout="fill" objectFit="cover" src={misionImage} alt='transmission en vivo'></Image>
+                    <Image layout="fill" src={misionImage} alt='transmission en vivo'></Image>
                 </div>
             </div>
             <div className="video-container">
@@ -39,10 +39,9 @@ function media() {
                 <video autoPlay muted src={domain + video}></video>
                 <div className="duties">
                     {Media.duties?.map((duty, index) => (
-
-                        <Parallax strength={200} bgImage={domain + duty.image}>
-                            <div className="first-text flex-center">
-                                <h1 key={index}>{duty.title}</h1>
+                        <Parallax key={index} strength={400} bgImage={domain + duty.image}>
+                            <div className="first-text flex-center box-shadow">
+                                <h1>{duty.title}</h1>
                             </div>
                         </Parallax>
                     ))}
@@ -125,9 +124,12 @@ margin: 0 auto;
         .first-text{
             text-align: center;
             height: 20em;
+            box-shadow: 10px 20px 30px red;
             h1{
-                background-color: #00000090;
+                background-color: #58bef860;
                 padding: 1em;
+                text-align: right;
+                color: white;
             }
         }
     }

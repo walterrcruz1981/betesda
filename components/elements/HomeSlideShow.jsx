@@ -21,7 +21,7 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
                     {!isPlaying
                         ? <div className="poster-image">
                             <h1 className='text-shadow'>Ministerios Betesda</h1>
-                            <Image layout='fill' objectFit='cover' src={videoPoster}></Image>
+                            <Image layout='fill' objectFit='cover' src={videoPoster} alt=''></Image>
                             <button onClick={(e) => {
                                 e.stopPropagation()
                                 setIsPlaying(true)

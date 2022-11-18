@@ -37,7 +37,7 @@ function Somos() {
             <Modal videoInfo={videoInfo} open={openModal} closeModal={() => setOpenModal(false)} />
             <div className="fancy-accordion flex-center-column">
                 <h1 className="header">Somos Iglesia Con Proposito</h1>
-                <Image priority className='image' layout='fill' objectFit='cover' src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='somos' />
+                <Image priority className='image' layout='fill' src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='somos' />
                 <div className="container flex-center">
                     <div className="buttons">
                         {propositos?.map((item, index) => (
@@ -136,18 +136,18 @@ position: relative;
             z-index: -1;
             opacity: .2;
         }
-        img {
-            z-index: -1;
-        }
         .container{
             border-radius: 1em;
             justify-content: space-evenly;
             gap: 1em;
             overflow: hidden;
             position: relative;
-            width: 80%;
+            
             height: 30em;
             margin: 0 auto;
+            img{
+                z-index: -1;
+            }
             .buttons{
             flex-direction: column;
             padding: 1em;
