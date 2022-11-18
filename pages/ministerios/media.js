@@ -6,6 +6,7 @@ import { Parallax } from "react-parallax";
 const domain = 'https://dih6tqxrn8ffv.cloudfront.net/'
 const video = 'mediaVideo.mp4'
 const heroImage = 'fotos/media/mediaTeam.jpg'
+const heroImage2 = 'fotos/media/mediaTeam2.jpg'
 const heroVideo = 'heroVideo.mp4'
 const misionImage = 'https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
 const visionImage = 'https://images.unsplash.com/photo-1622202210941-5fc06f1d581a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80'
@@ -19,7 +20,7 @@ function media() {
                     <span>{Media.title.toUpperCase()}</span>
                     <h1>CONOCE NUESTRO<br></br> MINISTERIO</h1>
                 </div>
-                <video objectFit='cover' autoPlay muted src={domain + heroVideo}></video>
+                <video poster={domain + heroImage2} objectFit='cover' autoPlay muted src={domain + heroVideo}></video>
             </div>
             <div className="card-container">
                 <div className="card flex-center-column text-shadow box-shadow">
