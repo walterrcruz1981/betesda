@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components"
 import { Media } from "../../public/assets/page-content/ministerios";
+import { Parallax } from "react-parallax";
 
 const domain = 'https://dih6tqxrn8ffv.cloudfront.net/'
 const video = 'mediaVideo.mp4'
@@ -9,9 +10,10 @@ const heroVideo = 'heroVideo.mp4'
 const misionImage = 'https://images.unsplash.com/photo-1502101872923-d48509bff386?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
 const visionImage = 'https://images.unsplash.com/photo-1622202210941-5fc06f1d581a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80'
 function media() {
+
     return (
         <MediaContainer>
-            <div className="hero-section flex-column">
+            <div className="hero-section flex-column  box-shadow">
                 <hr></hr>
                 <div className="text-content flex-column-start text-shadow">
                     <span>{Media.title.toUpperCase()}</span>
@@ -20,12 +22,12 @@ function media() {
                 <video objectFit='cover' autoPlay muted src={domain + heroVideo}></video>
             </div>
             <div className="card-container">
-                <div className="card flex-center-column text-shadow">
+                <div className="card flex-center-column text-shadow box-shadow">
                     <h1>Visión</h1>
                     <p>{Media.vision}</p>
                     <Image layout="fill" objectFit="cover" src={visionImage} alt='transmission en vivo'></Image>
                 </div>
-                <div className="card flex-center-column">
+                <div className="card flex-center-column box-shadow">
                     <h1>Misión</h1>
                     <p>{Media.mision}</p>
                     <Image layout="fill" objectFit="cover" src={misionImage} alt='transmission en vivo'></Image>
@@ -37,12 +39,17 @@ function media() {
                 <video autoPlay muted src={domain + video}></video>
                 <div className="duties">
                     {Media.duties?.map((duty, index) => (
-                        <h1 className="box-shadow" key={index}>{duty}</h1>
+
+                        <Parallax strength={200} bgImage={domain + duty.image}>
+                            <div className="first-text flex-center">
+                                <h1 key={index}>{duty.title}</h1>
+                            </div>
+                        </Parallax>
                     ))}
                 </div>
             </div>
 
-        </MediaContainer>
+        </MediaContainer >
     )
 }
 
@@ -115,11 +122,13 @@ margin: 0 auto;
         margin: 1.8em 0;
         gap: 1em;
         grid-template-columns: repeat( auto-fit, minmax(360px, 1fr) );
-        h1{
-            background-color: #66adff;
-            padding: .5em;
+        .first-text{
             text-align: center;
-            color: white;
+            height: 20em;
+            h1{
+                background-color: #00000090;
+                padding: 1em;
+            }
         }
     }
 
@@ -135,6 +144,12 @@ margin: 0 auto;
             span{
                 font-size: 2rem;
             }
+        }
+    }
+    .duties{
+        gap: 0;
+        h1{
+            padding: 0;
         }
     }
 }
