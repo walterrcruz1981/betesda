@@ -2,7 +2,7 @@ export const propositos = [
     {
         title: 'Misión',
         description: 'Nuestra iglesia comunica la Palabra de Dios a través del evangelismo. Somos embajadores de Cristo y creemos que es nuestra responsabilidad compartir las Buenas Nuevas dondequiera que vayamos. De hecho, el evangelismo es más que nuestra responsabilidad; es nuestro gran privilegio. Mientras haya una persona en el mundo que no conozca a Cristo, nuestra iglesia seguirá extendiendo la mano.',
-        imageUrl: 'https://images.unsplash.com/photo-1621354898913-d3cec6b17162?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+        imageUrl: 'https://images.unsplash.com/photo-1545424273-4dd93a233016?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
     },
     {
         title: 'Compañerismo',

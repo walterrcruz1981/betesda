@@ -23,7 +23,9 @@ const CardContainer = styled.div`
       position: relative;
       background: linear-gradient(to top, #00000050, #0000006c, #ffffff1f);
       &:hover{
-        box-shadow: 1px 1px 3px black;
+        box-shadow: 1px 1px 6px black;
+        transform: scale(1.001);
+        transition: all 300ms ease-in-out;
       }
       .content {
         width: 70%;
@@ -31,10 +33,7 @@ const CardContainer = styled.div`
         line-height: 1.4em;
         color: white;
         z-index: 1;
-        p {
-          color: white;
-          font-size: 1.2rem;
-        }
+        font-size: 1.2rem;
         span {
           font-size: 1rem;
         }

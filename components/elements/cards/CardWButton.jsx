@@ -20,10 +20,18 @@ const CardContainer = styled.div`
       box-shadow: 1px 1px 1px black;
       overflow: hidden;
       position: relative;
-      background: linear-gradient(to bottom, #0000004e, #00000067, #ffffff10);
+      background: linear-gradient(to bottom, #0000004e, #00000067, #ffffff10);    
       &:hover{
-        box-shadow: inset 1px 1px 3px black;
+        box-shadow: 1px 1px 6px black;
+        transform: scale(1.01);
+        transition: all 300ms ease-in-out;
       }
+      img{
+        &:hover{
+
+        }
+      }
+      
       .content {
         width: 60%;
         row-gap: .4em;

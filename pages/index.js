@@ -158,7 +158,9 @@ const HomeContainer = styled.div`
       outline: 1px solid;
       border-radius: 10px;
       &:hover{
-        box-shadow:inset 1px 1px 1px black;
+        box-shadow: 1px 1px 6px black;
+        transform: scale(1.01);
+        transition: all 300ms ease-in-out;
       }
       span {
         font-size: 1.5rem;
@@ -179,6 +181,11 @@ const HomeContainer = styled.div`
       h1{
         z-index: 1;
         color: white;
+      }
+      &:hover{
+        box-shadow: 1px 1px 6px black;
+        transform: scale(1.01);
+        transition: all 300ms ease-in-out;
       }
     }
   }

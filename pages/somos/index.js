@@ -37,11 +37,10 @@ function Somos() {
             <Modal videoInfo={videoInfo} open={openModal} closeModal={() => setOpenModal(false)} />
             <div className="fancy-accordion flex-center-column">
                 <h1 className="header">Somos Iglesia Con Proposito</h1>
-                <Image priority className='image' layout='fill' src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='somos' />
                 <div className="container flex-center">
                     <div className="buttons">
                         {propositos?.map((item, index) => (
-                            <div key={index} onClick={() => setSelected(index)} className={index !== selected ? 'button ' : 'button text-shadow  button-reveal'} href="">{item.title}</div>
+                            <div key={index} onClick={() => setSelected(index)} className={index !== selected ? 'button flex-center' : 'button text-shadow  button-reveal'} href="">{item.title}</div>
                         ))}
                     </div>
                     {propositos?.map((item, index) => (
@@ -113,8 +112,9 @@ position: relative;
         padding: 1em;
         background-color: #034a9ba4;
         position: relative;
-        height: 35em;
+        height: 40em;
         color: white;
+        border-radius: 10px;
         h1 {
             font-size: 3em;
         }
@@ -130,21 +130,19 @@ position: relative;
     }
     .fancy-accordion{
         position: relative;
-        height: 40em;
-
-        .image {
-            z-index: -1;
-            opacity: .2;
-        }
+        height: 60em;
+        margin-top: 1.5em;
+        background: linear-gradient(to right, #c7c7ff, white, #d4ffdb5f);
+        border-radius: 10px;
         .container{
             border-radius: 1em;
-            justify-content: space-evenly;
             gap: 1em;
             overflow: hidden;
             position: relative;
-            
-            height: 30em;
+            height: 40em;
+            width: 90%;
             margin: 0 auto;
+            z-index: 1;
             img{
                 z-index: -1;
             }
@@ -155,9 +153,9 @@ position: relative;
             z-index: 1;
             .button {
                 background-color: white;
-                width: 300px;
+                width: 220px;
                 padding: 1.5em 2em;
-                height: 5em;
+                height: 3em;
                 font-size: 1.1rem;
                 font-weight: 400;
                 letter-spacing: 3px;
@@ -173,14 +171,13 @@ position: relative;
                 width: 0;
                 background-color: transparent;
                 color: white;
+                
             }
         }
         }
         .button-content{
                 color: white;
-                p {
-                    color: white;
-                }
+                font-size: 1.4rem;
             }
     }
     .button-container{
@@ -235,6 +232,7 @@ position: relative;
                 }
                 .button-content {
                     margin-top: -2.5em;
+                    font-size: .9rem;
                 }
             }
         }
