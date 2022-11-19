@@ -183,11 +183,11 @@ position: relative;
     @media(max-width: 800px){
         .poster-container{
             height: 30em;
+            .content{
+                margin: 30% 0 0 10%;
+            }
         }
-        .content{
-            height: 30em;
-            padding: 1em;
-        }
+
         .video-container{
             height: 30em;
         }
