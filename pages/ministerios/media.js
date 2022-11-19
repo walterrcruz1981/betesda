@@ -14,22 +14,24 @@ function media() {
 
     return (
         <MediaContainer>
-            <div className="hero-section flex-column  box-shadow">
-                <hr></hr>
-                <div className="text-content flex-column-start text-shadow">
-                    <span>{Media.title.toUpperCase()}</span>
-                    <h1>CONOCE NUESTRO<br></br> MINISTERIO</h1>
+            <Parallax strength={400} bgImage={domain + heroImage2} style={{ borderRadius: '2em', boxShadow: '-2px 10px 20px #0051ff66' }}>
+                <div className="hero-section flex-column  box-shadow">
+                    <hr></hr>
+                    <div className="text-content flex-column-start text-shadow">
+                        <span>{Media.title.toUpperCase()}</span>
+                        <h1>CONOCE NUESTRO<br></br> MINISTERIO</h1>
+                    </div>
+                    {/* <video poster={domain + heroImage2} objectFit='cover' autoPlay muted src={domain + heroVideo}></video> */}
                 </div>
-                <video poster={domain + heroImage2} objectFit='cover' autoPlay muted src={domain + heroVideo}></video>
-            </div>
+            </Parallax>
             <div className="card-container">
                 <div className="card flex-center-column text-shadow box-shadow">
-                    <h1>Visión</h1>
+                    <h1>Misión</h1>
                     <p>{Media.vision}</p>
                     <Image layout="fill" src={visionImage} alt='transmission en vivo'></Image>
                 </div>
                 <div className="card flex-center-column box-shadow">
-                    <h1>Misión</h1>
+                    <h1>Visión</h1>
                     <p>{Media.mision}</p>
                     <Image layout="fill" src={misionImage} alt='transmission en vivo'></Image>
                 </div>
@@ -40,8 +42,8 @@ function media() {
                 <video autoPlay muted src={domain + video}></video>
                 <div className="duties">
                     {Media.duties?.map((duty, index) => (
-                        <Parallax key={index} strength={400} bgImage={domain + duty.image}>
-                            <div className="first-text flex-center box-shadow">
+                        <Parallax bgClassName="duties-card" style={{ borderRadius: '1em', boxShadow: '-2px 2px 20px #0051ff66' }} key={index} strength={400} bgImage={domain + duty.image}>
+                            <div className="text-content flex-center">
                                 <h1>{duty.title}</h1>
                             </div>
                         </Parallax>
@@ -58,9 +60,9 @@ width:100%;
 margin: 0 auto;
 .hero-section{
     position: relative;
-    padding: 38% 0 0;
+    padding: 30% 0 0;
     width: 100%;
-    height: 60em;
+    height: 50em;
     border-radius: .6em;
     overflow: hidden;
     video{
@@ -122,7 +124,7 @@ margin: 0 auto;
         margin: 1.8em 0;
         gap: 1em;
         grid-template-columns: repeat( auto-fit, minmax(360px, 1fr) );
-        .first-text{
+        .text-content{
             text-align: center;
             height: 20em;
             box-shadow: 10px 20px 30px red;
@@ -133,6 +135,13 @@ margin: 0 auto;
                 color: white;
             }
         }
+        .duties-card{
+            height: 10em;
+            width: 10em;
+            z-index: -2;
+        
+        }
+
     }
 
 }

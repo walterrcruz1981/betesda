@@ -6,8 +6,12 @@ import VideoSlideShow from './VideoSlideShow';
 import { useRef, useState } from 'react';
 import Image from 'next/image'
 import Modal from './Modal';
+import { Parallax } from 'react-parallax';
 
 function HomeSlideShow({ anuncios, videos, slideShow }) {
+    const domain = 'https://dih6tqxrn8ffv.cloudfront.net/'
+    const heroImage = 'fotos/media/mediaTeam.jpg'
+    const hero1 = 'https://images.unsplash.com/photo-1501430654243-c934cec2e1c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
     const videoUrl = 'https://dih6tqxrn8ffv.cloudfront.net/bienvenida.mov'
     const videoPoster = 'https://images.unsplash.com/photo-1515162305285-0293e4767cc2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80'
     const [activeSlide, setActiveSlide] = useState(true)
@@ -19,16 +23,18 @@ function HomeSlideShow({ anuncios, videos, slideShow }) {
                 {activeSlide ? <VideoContainer>
 
                     {!isPlaying
-                        ? <div className="poster-image">
-                            <h1 className='text-shadow'>Ministerios Betesda</h1>
-                            <Image layout='fill' objectFit='cover' src={videoPoster} alt=''></Image>
-                            <button onClick={(e) => {
-                                e.stopPropagation()
-                                setIsPlaying(true)
-                            }}>Ver Video</button>
-                        </div>
+                        ? <div className="poster-container"><Parallax strength={500} style={{ height: '100%', width: '100%' }} bgImage={hero1}>
+                            <div className="content text-shadow">
+                                <h1>Ministerios Betesda</h1>
+                                <button onClick={(e) => {
+                                    e.stopPropagation()
+                                    setIsPlaying(true)
+                                }}>Bienvenida</button>
+                            </div>
+
+                        </Parallax></div>
                         : <div className="video-container">
-                            <video controls autoPlay poster={videoPoster} ref={playVideo} src={videoUrl}></video>
+                            <video controls autoPlay poster={videoPoster} ref={playVideo} src={videoUrl}>video loading...</video>
                         </div>
                     }
                 </ VideoContainer> :
@@ -154,24 +160,16 @@ span {
 `;
 const VideoContainer = styled.div`
 position: relative;
-    .poster-image{
-        h1{
-            position: absolute;
-            width: 100%;
-            top: 30%;
-            text-align: center;
-            z-index: 1;
-            font-size: 3.4rem;
-            color: white;
-        }
-        height: 44em;
-        button{
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            transform: translate(-50%);
-        }
+.poster-container{
+    background-color: blue;
+    height: 44em;
+    position: relative;
+    .content{
+        color: white;
+        margin: 30% 0 20% 30%;
+        font-size: 2rem;
     }
+}
 
     .video-container{
         height: 44em;
@@ -183,7 +181,7 @@ position: relative;
         }
     }
     @media(max-width: 800px){
-        .poster-image{
+        .poster-container{
             height: 30em;
         }
         .content{

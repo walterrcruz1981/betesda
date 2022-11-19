@@ -127,7 +127,7 @@ const HomeContainer = styled.div`
   height: 44em;
   width: 100%;
   iframe{
-    height: 45em;
+    height: 44em;
     width: 100%;
   }
 }
@@ -190,7 +190,10 @@ const HomeContainer = styled.div`
       top: 2.2em;
     }
     .live-video{
-      height: 30em
+      height: 30em;
+      iframe{
+        height: 30em;
+      }
     }
   }
 
