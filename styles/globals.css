@@ -105,6 +105,14 @@ button:hover {
   text-align: right;
 }
 
+.responsive-grid {
+  gap: 1.1em;
+  width: 100%;
+  display: grid;
+  padding: .1em 1em;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -2,6 +2,8 @@
 import image1 from '../images/pastorelsalvador.jpg'
 import salinaCruz from '../images/pastorjoel-salinas-cruz.jpeg'
 import tehuantepec from '../images/pastorJuanCarlos.jpeg'
+import elSAlvadorFlag from '../images/flags/elSAlvadorFlag.png'
+import mexicoFlag from '../images/flags/mexicoFlag.png'
 
 export const betesdaCentral = {
     imageUrl: image1,
@@ -65,3 +67,34 @@ export const tejuantepecOaxaca = {
     iframeSrc: 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d805.5056711883875!2d-95.2095740352649!3d16.186871204998294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1668260403040!5m2!1sen!2sus'
 }
 
+
+export const Misiones = [
+    {
+        country: 'El Salvador',
+        flag: elSAlvadorFlag,
+        mision: [
+            {
+                title: 'Betesda Apopa',
+                linkUrl: '/misiones/elsalvador'
+            },
+            {
+                title: 'Betesda San Salvador',
+                linkUrl: '/misiones/elsalvador'
+            }
+        ]
+    },
+    {
+        country: 'Mexico',
+        flag: mexicoFlag,
+        mision: [
+            {
+                title: 'Betesda Salina Cruz, Oaxaca',
+                linkUrl: '/misiones/salinas-cruz-oaxaca'
+            },
+            {
+                title: 'Betesda Tehuantepec, Oaxaca',
+                linkUrl: '/misiones/tehuantepec-oaxaca'
+            }
+        ]
+    }
+]

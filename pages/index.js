@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import liveIcon from '../public/assets/images/live.png'
 import Image from "next/image";
 import Modal from "../components/elements/Modal";
+import { Misiones } from "../public/assets/page-content/misiones";
 
 const youtubeApiUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8br10Qoo5bZvTKiJhPkdOA&eventType=live&order=date&type=video&key='
 
@@ -42,12 +43,19 @@ export default function Home({ videos, anuncios, data }) {
   const [isLive, setIsLive] = useState(false)
   const [openModal, setOpenModal] = useState(false)
   const [videoId, setVideoId] = useState([])
+  const [openMisionContainer, setMisionContainer] = useState(false)
+  const [misionId, setMisionId] = useState(null)
+  const [misionSelected, setIsMisionSelected] = useState(null)
+  const [countrySelected, setCountrySelected] = useState(null)
+
+  console.log(misionId, 'id');
   function checkLiveStatus(check) {
     if (check.pageInfo.totalResults !== 0) setIsLive(true)
     else return
     const { id } = check.items[0]
     setVideoId(id.videoId)
   }
+
   useEffect(() => {
     checkLiveStatus(data)
   }, [])
@@ -71,6 +79,27 @@ export default function Home({ videos, anuncios, data }) {
         : <HomeSlideShow anuncios={anuncios} videos={videos.items} slideShow={content.slideShow} />}
 
     </div>
+    <MisionesTitle onClick={() => {
+      setMisionContainer(!openMisionContainer)
+      setCountrySelected(null)
+    }}>Misiones</MisionesTitle>
+    {openMisionContainer ? <CountryContainer className="responsive-grid">
+      {Misiones?.map((country, index) => {
+        return <button key={index} onClick={() => {
+          if (countrySelected == index) {
+            return setCountrySelected(null)
+          }
+          setCountrySelected(index)
+        }}><Image src={country.flag}></Image></button>
+      })}
+    </CountryContainer> : null}
+    {
+      <CountryMisiones className="flex-center-column">
+        {Misiones[countrySelected]?.mision.map((mision, index) => {
+          return <Link href={`${mision.linkUrl}`}><a>{mision.title}</a></Link>
+        })}
+      </CountryMisiones>
+    }
     <div className="container flex">
       <div className="cards-container">
         <div className="nueva-serie flex-center-column text-shadow">
@@ -126,9 +155,9 @@ const HomeContainer = styled.div`
 .live-video{
   height: 44em;
   width: 100%;
+  padding-bottom: 1em;
   iframe{
-    height: 44em;
-    width: 100%;
+   aspect-ratio: 16/9;
   }
 }
 .container {
@@ -197,11 +226,53 @@ const HomeContainer = styled.div`
       top: 2.2em;
     }
     .live-video{
-      height: 30em;
-      iframe{
-        height: 30em;
-      }
+    height: 25em;
     }
   }
 
+`;
+const MisionesTitle = styled.div`
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    background-color:#515a69;
+    width: 50%;
+    cursor: pointer;
+    padding: .5em 2em;
+    border-radius: 10px;
+    text-align: center;
+    transform: translateX(50%);
+    &:hover {
+        background-color: #7687b68d;
+        color: #0c0c0cdd;
+    }
+`;
+
+const CountryContainer = styled.div`
+  width: 100%;
+  margin: 2em 0;
+  border-top: 1px solid black;
+  button{
+  box-shadow: none;
+}
+img{
+  &:hover{
+  transform: scale(1.2);
+  transition: transform 500ms ease-in-out;
+}
+}
+`;
+const CountryMisiones = styled.div`
+  a{
+    margin: .5em;
+    background-color: #fdbf38;
+    color: #1b1b1b;
+    padding: 1em 2em;
+    font-weight: 700;
+    &:hover{
+      background-color: #2bb1e6;
+      color: white;
+    }
+  }
+  width: 100%;
 `;
