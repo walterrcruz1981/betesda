@@ -90,13 +90,13 @@ export default function Home({ videos, anuncios, data }) {
             return setCountrySelected(null)
           }
           setCountrySelected(index)
-        }}><Image src={country.flag}></Image></button>
+        }}><Image src={country.flag} alt='flag image'></Image></button>
       })}
     </CountryContainer> : null}
     {
       <CountryMisiones className="flex-center-column">
         {Misiones[countrySelected]?.mision.map((mision, index) => {
-          return <Link href={`${mision.linkUrl}`}><a>{mision.title}</a></Link>
+          return <Link key={index} href={`${mision.linkUrl}`}><a>{mision.title}</a></Link>
         })}
       </CountryMisiones>
     }
