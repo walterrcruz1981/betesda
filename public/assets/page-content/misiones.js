@@ -2,7 +2,7 @@
 import image1 from '../images/pastorelsalvador.jpg'
 import salinaCruz from '../images/pastorjoel-salinas-cruz.jpeg'
 import tehuantepec from '../images/pastorJuanCarlos.jpeg'
-import elSAlvadorFlag from '../images/flags/elSAlvadorFlag.png'
+import elSAlvadorFlag from '../images/flags/elSalvadorFlag.png'
 import mexicoFlag from '../images/flags/mexicoFlag.png'
 
 export const betesdaCentral = {
